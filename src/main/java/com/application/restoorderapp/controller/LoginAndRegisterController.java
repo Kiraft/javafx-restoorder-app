@@ -2,8 +2,8 @@ package com.application.restoorderapp.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -11,9 +11,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 public class LoginAndRegisterController {
-
-    @FXML
-    private ComboBox<?> boxCarrera;
 
     @FXML
     private Button btnLogin;
@@ -25,7 +22,7 @@ public class LoginAndRegisterController {
     private Button btnLogin11;
 
     @FXML
-    private Button btnRecoverBack;
+    private Button btnLogin2;
 
     @FXML
     private Button btnRecoverBack1;
@@ -35,12 +32,6 @@ public class LoginAndRegisterController {
 
     @FXML
     private Button btnRecoverBack111;
-
-    @FXML
-    private Button btnRecoverValidate;
-
-    @FXML
-    private Button btnRegister;
 
     @FXML
     private Button btnSwitchLogin;
@@ -55,34 +46,19 @@ public class LoginAndRegisterController {
     private Pane containerLogin;
 
     @FXML
-    private Pane containerLogin1;
-
-    @FXML
-    private Pane containerLogin11;
-
-    @FXML
     private Pane containerLogin111;
 
     @FXML
-    private Pane containerRecoverUser;
+    private Pane containerRecuperar;
+
+    @FXML
+    private Pane containerRecuperarPassword;
 
     @FXML
     private Pane containerRegister;
 
     @FXML
     private Label labelRecover;
-
-    @FXML
-    private TextField txtEmail;
-
-    @FXML
-    private PasswordField txtNewPassword;
-
-    @FXML
-    private TextField txtNombre;
-
-    @FXML
-    private TextField txtNumeroControl;
 
     @FXML
     private PasswordField txtPassword;
@@ -94,10 +70,16 @@ public class LoginAndRegisterController {
     private PasswordField txtPassword11;
 
     @FXML
-    private TextField txtRecoverEmail;
+    private PasswordField txtPassword2;
 
     @FXML
-    private TextField txtRecoverMatricula;
+    private PasswordField txtPassword21;
+
+    @FXML
+    private PasswordField txtPassword22;
+
+    @FXML
+    private PasswordField txtPassword23;
 
     @FXML
     private TextField txtUser;
@@ -109,7 +91,11 @@ public class LoginAndRegisterController {
     private TextField txtUser11;
 
     @FXML
+    private TextField txtUser2;
+
+    @FXML
     void LoginAndRegister(ActionEvent event) {
+
 
     }
 
@@ -136,6 +122,32 @@ public class LoginAndRegisterController {
     @FXML
     void switchForm(ActionEvent event) {
 
+        Node source = (Node) event.getSource();
+        switch (source.getId()) {
+            case "btnSwitchRegister":
+                showRegisterForm();
+                break;
+            case "btnSwitchLogin":
+                showLoginForm();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void showLoginForm() {
+        containerRegister.setVisible(false);
+        containerLogin.setVisible(true);
+        btnSwitchLogin.setStyle("-fx-background-color: #1B396A;");
+        btnSwitchRegister.setStyle("-fx-background-color: #343131;");
+    }
+
+    private void showRegisterForm() {
+        containerLogin.setVisible(false);
+        containerRegister.setVisible(true);
+        btnSwitchRegister.setStyle("-fx-background-color: #1B396A;");
+        btnSwitchLogin.setStyle("-fx-background-color: #343131;");
+        loadCarrerasInComboBox();
     }
 
 }
