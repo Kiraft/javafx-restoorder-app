@@ -38,7 +38,7 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Button>
-      <Pane fx:id="containerLogin" layoutX="263.0" layoutY="167.0" prefHeight="430.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 0 2 2 2; -fx-border-radius: 0 0 20 20; -fx-background-radius: 0 0 20 20;" visible="false">
+      <Pane fx:id="containerLogin" layoutX="263.0" layoutY="167.0" prefHeight="430.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 0 2 2 2; -fx-border-radius: 0 0 20 20; -fx-background-radius: 0 0 20 20;">
          <children>
             <Pane layoutX="38.0" layoutY="30.0" prefHeight="375.0" prefWidth="256.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #b12d33; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;">
                <children>
@@ -57,7 +57,7 @@
                         <Font name="System Bold Italic" size="15.0" />
                      </font>
                   </Button>
-                  <Label fx:id="labelToForget" layoutX="64.0" layoutY="268.0" onMouseClicked="#labelRecover" onMouseEntered="#inOverMouse" onMouseExited="#outOverMouse" text="Olvidaste tu contraseña?" />
+                  <Label fx:id="labelToForget" layoutX="64.0" layoutY="268.0" onMouseClicked="#labelAction" onMouseEntered="#inOverMouse" onMouseExited="#outOverMouse" text="Olvidaste tu contraseña?" />
                   <Label layoutX="34.0" layoutY="135.0" text="Usuario">
                      <font>
                         <Font name="System Bold" size="12.0" />
@@ -77,7 +77,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="containerRegister" layoutX="263.0" layoutY="167.0" prefHeight="430.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 0 2 2 2; -fx-border-radius: 0 0 20 20; -fx-background-radius: 0 0 20 20;">
+      <Pane fx:id="containerRegister" layoutX="263.0" layoutY="167.0" prefHeight="430.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 0 2 2 2; -fx-border-radius: 0 0 20 20; -fx-background-radius: 0 0 20 20;" visible="false">
          <children>
             <Pane layoutX="38.0" layoutY="30.0" prefHeight="383.0" prefWidth="256.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #b12d33; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;">
                <children>
@@ -169,7 +169,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnForgetBackToLogin" layoutX="13.0" layoutY="326.0" mnemonicParsing="false" onAction="#backLogin" prefHeight="35.0" prefWidth="43.0" style="-fx-background-color: #b12d33; -fx-background-radius: 15;" text="←" textFill="WHITE">
+                  <Button fx:id="btnForgetBackToLogin" layoutX="13.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnForgetActionBack" prefHeight="35.0" prefWidth="43.0" style="-fx-background-color: #b12d33; -fx-background-radius: 15;" text="←" textFill="WHITE">
                      <font>
                         <Font name="System Bold Italic" size="34.0" />
                      </font>
@@ -215,7 +215,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnForgetBackToData" layoutX="13.0" layoutY="326.0" mnemonicParsing="false" onAction="#backLogin" prefHeight="35.0" prefWidth="43.0" style="-fx-background-color: #b12d33; -fx-background-radius: 15;" text="←" textFill="WHITE">
+                  <Button fx:id="btnForgetBackToData" layoutX="13.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnForgetActionBack" prefHeight="35.0" prefWidth="43.0" style="-fx-background-color: #b12d33; -fx-background-radius: 15;" text="←" textFill="WHITE">
                      <font>
                         <Font name="System Bold Italic" size="34.0" />
                      </font>
@@ -246,7 +246,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelForgetBackToLogin" alignment="CENTER" layoutX="31.0" layoutY="305.0" prefHeight="39.0" prefWidth="195.0" text="Volver a iniciar sesion" textAlignment="CENTER" underline="true" wrapText="true">
+                  <Label fx:id="labelForgetBackToLogin" alignment="CENTER" layoutX="31.0" layoutY="305.0" onMouseClicked="#labelAction" prefHeight="39.0" prefWidth="195.0" text="Volver a iniciar sesion" textAlignment="CENTER" underline="true" wrapText="true">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

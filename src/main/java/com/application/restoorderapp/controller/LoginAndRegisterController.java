@@ -2,6 +2,7 @@ package com.application.restoorderapp.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -98,13 +99,13 @@ public class LoginAndRegisterController {
     }
 
     @FXML
-    void backLogin(ActionEvent event) {
+    void btnForgetActionBack(ActionEvent event) {
 
     }
 
 
     @FXML
-    void labelRecover(MouseEvent event) {
+    void labelAction(MouseEvent event) {
 
     }
     @FXML
@@ -119,7 +120,37 @@ public class LoginAndRegisterController {
 
     @FXML
     void switchForm(ActionEvent event) {
+        Node source = (Node) event.getSource();
 
+        switch (source.getId()) {
+            case "btnSwitchRegister":
+                showRegisterForm();
+                break;
+            case "btnSwitchLogin":
+                showLoginForm();
+                break;
+            default:
+                break;
+        }
     }
 
+    private void showLoginForm() {
+        containerRegister.setVisible(false);
+        containerLogin.setVisible(true);
+
+        btnSwitchLogin.setStyle("-fx-background-color: #FFFFFF; -fx-text-fill: #000000;");
+        btnSwitchRegister.setStyle("-fx-background-color: #b12d33;");
+    }
+
+    private void showRegisterForm() {
+        containerLogin.setVisible(false);
+        containerRegister.setVisible(true);
+
+        btnSwitchRegister.setStyle("-fx-background-color: #FFFFFF; -fx-text-fill: #000000;");
+        btnSwitchLogin.setStyle("-fx-background-color: #b12d33; -fx-text-fill: #FFFFFF;");
+//        loadCarrerasInComboBox();
+    }
+
+
 }
+
