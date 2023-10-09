@@ -100,22 +100,52 @@ public class LoginAndRegisterController {
 
     @FXML
     void btnForgetActionBack(ActionEvent event) {
+        Node source = (Node) event.getSource();
 
+        switch (source.getId()) {
+            case "btnForgetBackToData":
+
+                break;
+            case "btnForgetBackToLogin":
+                btnForgetQuestion.setVisible(false);
+                containerForget.setVisible(false);
+                containerLogin.setVisible(true);
+                btnSwitchLogin.setVisible(true);
+                btnSwitchRegister.setVisible(true);
+                break;
+            default:
+                break;
+        }
     }
 
 
     @FXML
     void labelAction(MouseEvent event) {
+        Node source = (Node) event.getSource();
 
+        switch (source.getId()) {
+            case "labelForgetBackToLogin":
+
+                break;
+            case "labelToForget":
+                btnSwitchLogin.setVisible(false);
+                btnSwitchRegister.setVisible(false);
+                btnForgetQuestion.setVisible(true);
+                containerLogin.setVisible(false);
+                containerForget.setVisible(true);
+                break;
+            default:
+                break;
+        }
     }
     @FXML
     void inOverMouse(MouseEvent event) {
-
+        labelToForget.setUnderline(true);
     }
 
     @FXML
     void outOverMouse(MouseEvent event) {
-
+        labelToForget.setUnderline(false);
     }
 
     @FXML
