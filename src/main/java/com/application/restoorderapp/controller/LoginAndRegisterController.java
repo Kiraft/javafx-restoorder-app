@@ -2,7 +2,6 @@ package com.application.restoorderapp.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -13,25 +12,25 @@ import javafx.scene.layout.Pane;
 public class LoginAndRegisterController {
 
     @FXML
+    private Button btnForgetBackToData;
+
+    @FXML
+    private Button btnForgetBackToLogin;
+
+    @FXML
+    private Button btnForgetConfirm;
+
+    @FXML
+    private Button btnForgetMain;
+
+    @FXML
+    private Button btnForgetQuestion;
+
+    @FXML
     private Button btnLogin;
 
     @FXML
-    private Button btnLogin1;
-
-    @FXML
-    private Button btnLogin11;
-
-    @FXML
-    private Button btnLogin2;
-
-    @FXML
-    private Button btnRecoverBack1;
-
-    @FXML
-    private Button btnRecoverBack11;
-
-    @FXML
-    private Button btnRecoverBack111;
+    private Button btnRegister;
 
     @FXML
     private Button btnSwitchLogin;
@@ -40,62 +39,61 @@ public class LoginAndRegisterController {
     private Button btnSwitchRegister;
 
     @FXML
-    private Button btnSwitchRegister1;
+    private Pane containerForget;
+
+    @FXML
+    private Pane containerForgetPassword;
+
+    @FXML
+    private Pane containerForgetReady;
 
     @FXML
     private Pane containerLogin;
 
     @FXML
-    private Pane containerLogin111;
-
-    @FXML
-    private Pane containerRecuperar;
-
-    @FXML
-    private Pane containerRecuperarPassword;
-
-    @FXML
     private Pane containerRegister;
 
     @FXML
-    private Label labelRecover;
+    private Label labelForgetBackToLogin;
 
     @FXML
-    private PasswordField txtPassword;
+    private Label labelToForget;
 
     @FXML
-    private PasswordField txtPassword1;
+    private PasswordField txtCodeForget;
 
     @FXML
-    private PasswordField txtPassword11;
+    private TextField txtEmailRegister;
 
     @FXML
-    private PasswordField txtPassword2;
+    private TextField txtIdEmployedRegister;
 
     @FXML
-    private PasswordField txtPassword21;
+    private PasswordField txtNewPasswordEncoreForget;
 
     @FXML
-    private PasswordField txtPassword22;
+    private PasswordField txtNewPasswordForget;
 
     @FXML
-    private PasswordField txtPassword23;
+    private PasswordField txtPasswordEncoreRegister;
 
     @FXML
-    private TextField txtUser;
+    private PasswordField txtPasswordLogin;
 
     @FXML
-    private TextField txtUser1;
+    private PasswordField txtPasswordRegister;
 
     @FXML
-    private TextField txtUser11;
+    private TextField txtTypeRegister;
 
     @FXML
-    private TextField txtUser2;
+    private TextField txtUserForget;
+
+    @FXML
+    private TextField txtUserLogin;
 
     @FXML
     void LoginAndRegister(ActionEvent event) {
-
 
     }
 
@@ -104,13 +102,13 @@ public class LoginAndRegisterController {
 
     }
 
-    @FXML
-    void inOverMouse(MouseEvent event) {
-
-    }
 
     @FXML
     void labelRecover(MouseEvent event) {
+
+    }
+    @FXML
+    void inOverMouse(MouseEvent event) {
 
     }
 
@@ -122,32 +120,6 @@ public class LoginAndRegisterController {
     @FXML
     void switchForm(ActionEvent event) {
 
-        Node source = (Node) event.getSource();
-        switch (source.getId()) {
-            case "btnSwitchRegister":
-                showRegisterForm();
-                break;
-            case "btnSwitchLogin":
-                showLoginForm();
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void showLoginForm() {
-        containerRegister.setVisible(false);
-        containerLogin.setVisible(true);
-        btnSwitchLogin.setStyle("-fx-background-color: #1B396A;");
-        btnSwitchRegister.setStyle("-fx-background-color: #343131;");
-    }
-
-    private void showRegisterForm() {
-        containerLogin.setVisible(false);
-        containerRegister.setVisible(true);
-        btnSwitchRegister.setStyle("-fx-background-color: #1B396A;");
-        btnSwitchLogin.setStyle("-fx-background-color: #343131;");
-        loadCarrerasInComboBox();
     }
 
 }
