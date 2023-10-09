@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -10,9 +12,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="500.0" maxWidth="500.0" prefHeight="548.0" prefWidth="729.0" style="-fx-background-color: #f7e0a7;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tramitec.controllers.LoginController">
+<AnchorPane maxHeight="668.0" maxWidth="902.0" prefHeight="668.0" prefWidth="902.0" style="-fx-background-color: #f7e0a7;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controller.LoginAndRegisterController">
    <children>
-      <ImageView fitHeight="548.0" fitWidth="739.0" layoutX="-3.0" pickOnBounds="true">
+      <ImageView fitHeight="607.0" fitWidth="739.0" layoutX="-3.0" pickOnBounds="true">
          <image>
             <Image url="@../Downloads/Imagen%20de%20WhatsApp%202023-10-04%20a%20las%2014.34.39_e2ad38d6.jpg" />
          </image>
@@ -25,6 +27,11 @@
       <Button fx:id="btnSwitchLogin" layoutX="362.0" layoutY="124.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: #FFFFFF;" text="Iniciar Sesion">
          <font>
             <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSwitchRegister1" layoutX="195.0" layoutY="124.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="46.0" prefWidth="332.0" style="-fx-background-color: #b12d33;" text="Olvidaste tu contraseña?" textFill="WHITE" visible="false">
+         <font>
+            <Font name="System Bold" size="22.0" />
          </font>
       </Button>
       <Pane fx:id="containerLogin" layoutX="196.0" layoutY="163.0" prefHeight="321.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 0 2 2 2; -fx-border-radius: 0 0 20 20; -fx-background-radius: 0 0 20 20;">
@@ -59,6 +66,199 @@
                   </Label>
                </children>
             </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="containerLogin1" layoutX="195.0" layoutY="168.0" prefHeight="416.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 0 2 2 2; -fx-border-radius: 0 0 20 20; -fx-background-radius: 0 0 20 20;" visible="false">
+         <children>
+            <Pane layoutX="38.0" layoutY="30.0" prefHeight="362.0" prefWidth="256.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #b12d33; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;">
+               <children>
+                  <TextField fx:id="txtUser1" layoutX="31.0" layoutY="136.0" prefHeight="35.0" prefWidth="195.0" style="-fx-border-color: #b12d33; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="txtPassword1" layoutX="31.0" layoutY="203.0" prefHeight="35.0" prefWidth="195.0" style="-fx-border-color: #b12d33; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="btnLogin1" layoutX="64.0" layoutY="263.0" mnemonicParsing="false" onAction="#LoginAndRegister" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #b12d33; -fx-background-radius: 10;" text="Recuperar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="34.0" layoutY="118.0" text="Usuario">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="31.0" layoutY="186.0" text="Codigo">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnRecoverBack1" layoutX="13.0" layoutY="313.0" mnemonicParsing="false" onAction="#backLogin" prefHeight="35.0" prefWidth="43.0" style="-fx-background-color: #b12d33; -fx-background-radius: 15;" text="←" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="34.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-20.0" left="-20.0" right="-20.0" top="-25.0" />
+                     </padding>
+                  </Button>
+                  <ImageView fitHeight="95.0" fitWidth="166.0" layoutX="83.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/lockicon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="containerLogin11" layoutX="195.0" layoutY="168.0" prefHeight="416.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 0 2 2 2; -fx-border-radius: 0 0 20 20; -fx-background-radius: 0 0 20 20;" visible="false">
+         <children>
+            <Pane layoutX="38.0" layoutY="30.0" prefHeight="362.0" prefWidth="256.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #b12d33; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;">
+               <children>
+                  <TextField fx:id="txtUser11" layoutX="31.0" layoutY="136.0" prefHeight="35.0" prefWidth="195.0" style="-fx-border-color: #b12d33; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="txtPassword11" layoutX="31.0" layoutY="203.0" prefHeight="35.0" prefWidth="195.0" style="-fx-border-color: #b12d33; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="btnLogin11" layoutX="64.0" layoutY="263.0" mnemonicParsing="false" onAction="#LoginAndRegister" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #b12d33; -fx-background-radius: 10;" text="Cambiar" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="34.0" layoutY="118.0" text="Nueva contraseña">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="31.0" layoutY="186.0" text="Confirmar contraseñá">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnRecoverBack11" layoutX="13.0" layoutY="313.0" mnemonicParsing="false" onAction="#backLogin" prefHeight="35.0" prefWidth="43.0" style="-fx-background-color: #b12d33; -fx-background-radius: 15;" text="←" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="34.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-20.0" left="-20.0" right="-20.0" top="-25.0" />
+                     </padding>
+                  </Button>
+                  <ImageView fitHeight="95.0" fitWidth="166.0" layoutX="83.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/lockicon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="containerLogin111" layoutX="195.0" layoutY="168.0" prefHeight="398.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 0 2 2 2; -fx-border-radius: 0 0 20 20; -fx-background-radius: 0 0 20 20;" visible="false">
+         <children>
+            <Pane layoutX="38.0" layoutY="30.0" prefHeight="342.0" prefWidth="256.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #b12d33; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;">
+               <children>
+                  <Button fx:id="btnRecoverBack111" layoutX="10.0" layoutY="292.0" mnemonicParsing="false" onAction="#backLogin" prefHeight="35.0" prefWidth="43.0" style="-fx-background-color: #b12d33; -fx-background-radius: 15;" text="←" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="34.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="-20.0" left="-20.0" right="-20.0" top="-25.0" />
+                     </padding>
+                  </Button>
+                  <ImageView fitHeight="138.0" fitWidth="130.0" layoutX="63.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/lockicon.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="31.0" layoutY="161.0" prefHeight="116.0" prefWidth="195.0" text="Tu contraseña ha sido cambiada con exito, vuelve al inicio e intenta iniciar de nuevo" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="containerRecoverUser" layoutX="570.0" layoutY="85.0" prefHeight="431.0" prefWidth="332.0" style="-fx-background-color: #1B396A;" visible="false">
+         <children>
+            <TextField fx:id="txtRecoverMatricula" layoutX="44.0" layoutY="193.0" prefHeight="35.0" prefWidth="236.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtRecoverEmail" layoutX="44.0" layoutY="256.0" prefHeight="35.0" prefWidth="236.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Label layoutX="53.0" layoutY="40.0" text="Recupera tu Contraseña" textFill="WHITE">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnRecoverBack" layoutX="24.0" layoutY="376.0" mnemonicParsing="false" onAction="#backLogin" prefHeight="39.0" prefWidth="78.0" style="-fx-background-color: #343131; -fx-background-radius: 15; -fx-border-color: #FFFFFF; -fx-border-radius: 15;" text="←" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="40.0" />
+               </font>
+               <padding>
+                  <Insets bottom="-20.0" left="-20.0" right="-20.0" top="-25.0" />
+               </padding>
+            </Button>
+            <Label layoutX="44.0" layoutY="170.0" text="Numero de Control" textFill="WHITE" />
+            <Label layoutX="44.0" layoutY="239.0" text="Correo" textFill="WHITE" />
+            <Label alignment="TOP_LEFT" layoutX="44.0" layoutY="100.0" prefHeight="39.0" prefWidth="247.0" text="Ingresa los datos que se te piden a continuacion para recuperar tu contraseña" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Label>
+            <Pane layoutX="42.0" layoutY="41.0" prefHeight="23.0" prefWidth="5.0" style="-fx-background-color: #FFFFFF;" />
+            <Button fx:id="btnRecoverValidate" layoutX="98.0" layoutY="310.0" mnemonicParsing="false" onAction="#backLogin" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #343131;" text="Recuperar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="containerRegister" layoutX="278.0" layoutY="129.0" prefHeight="398.0" prefWidth="332.0" style="-fx-background-color: #1B396A;" visible="false">
+         <children>
+            <Button fx:id="btnRegister" layoutX="72.0" layoutY="345.0" mnemonicParsing="false" onAction="#LoginAndRegister" prefHeight="39.0" prefWidth="186.0" style="-fx-background-color: #343131;" text="Registrarse" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="47.0" layoutY="14.0" text="Nombre Completo" textFill="WHITE" />
+            <Label layoutX="47.0" layoutY="79.0" text="Numero de Control" textFill="WHITE" />
+            <Label layoutX="48.0" layoutY="145.0" text="Contraseña" textFill="WHITE" />
+            <Label layoutX="47.0" layoutY="209.0" text="Correo" textFill="WHITE" />
+            <Label layoutX="47.0" layoutY="276.0" text="Carrera" textFill="WHITE" />
+            <TextField fx:id="txtNombre" layoutX="48.0" layoutY="31.0" prefHeight="35.0" prefWidth="236.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtNumeroControl" layoutX="48.0" layoutY="96.0" prefHeight="35.0" prefWidth="236.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtEmail" layoutX="47.0" layoutY="226.0" prefHeight="35.0" prefWidth="236.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="txtNewPassword" layoutX="47.0" layoutY="162.0" prefHeight="35.0" prefWidth="236.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <ComboBox fx:id="boxCarrera" layoutX="48.0" layoutY="293.0" prefHeight="35.0" prefWidth="236.0" promptText="Que carrera estudias?" />
          </children>
       </Pane>
    </children>
