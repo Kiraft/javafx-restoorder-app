@@ -24,7 +24,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnSwitchLogin" layoutX="362.0" layoutY="124.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: #FFFFFF;" text="Iniciar Sesion">
+      <Button fx:id="btnSwitchLogin" layoutX="362.0" layoutY="124.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 2 2 0 0;" text="Iniciar Sesion">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
@@ -60,6 +60,69 @@
                      </font>
                   </Label>
                   <Label layoutX="31.0" layoutY="89.0" text="Contraseñá">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="containerLogin2" layoutX="196.0" layoutY="163.0" prefHeight="469.0" prefWidth="332.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #cdcdcc; -fx-border-width: 0 2 2 2; -fx-border-radius: 0 0 20 20; -fx-background-radius: 0 0 20 20;" visible="false">
+         <children>
+            <Pane layoutX="38.0" layoutY="30.0" prefHeight="410.0" prefWidth="256.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #b12d33; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;">
+               <children>
+                  <TextField fx:id="txtUser2" layoutX="31.0" layoutY="39.0" prefHeight="35.0" prefWidth="195.0" style="-fx-border-color: #b12d33; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="txtPassword2" layoutX="31.0" layoutY="99.0" prefHeight="35.0" prefWidth="195.0" style="-fx-border-color: #b12d33; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="btnLogin2" layoutX="63.0" layoutY="346.0" mnemonicParsing="false" onAction="#LoginAndRegister" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #b12d33; -fx-background-radius: 10;" text="Registrarse" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="34.0" layoutY="21.0" text="Nombre">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="31.0" layoutY="82.0" text="Apellido Materno">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtPassword21" layoutX="34.0" layoutY="161.0" prefHeight="35.0" prefWidth="195.0" style="-fx-border-color: #b12d33; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </PasswordField>
+                  <Label layoutX="34.0" layoutY="144.0" text="Apellido Paterno">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtPassword22" layoutX="34.0" layoutY="225.0" prefHeight="35.0" prefWidth="195.0" style="-fx-border-color: #b12d33; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </PasswordField>
+                  <Label layoutX="34.0" layoutY="208.0" text="Correo">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="txtPassword23" layoutX="34.0" layoutY="288.0" prefHeight="35.0" prefWidth="195.0" style="-fx-border-color: #b12d33; -fx-border-radius: 8; -fx-background-radius: 8;">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </PasswordField>
+                  <Label layoutX="34.0" layoutY="271.0" text="Puesto">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
