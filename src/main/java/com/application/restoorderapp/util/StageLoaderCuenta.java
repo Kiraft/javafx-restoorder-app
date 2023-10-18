@@ -11,11 +11,7 @@ import javafx.stage.Window;
 import java.io.IOException;
 
 import com.application.restoorderapp.controllers.NavbarController;
-import com.example.tramitec.controllers.ArchivoController;
-import com.example.tramitec.controllers.LandingPageController;
-import com.example.tramitec.controllers.MainController;
-import com.example.tramitec.controllers.StatusController;
-import com.example.tramitec.model.Alumno;
+
 
 public class StageLoaderCuenta {
 
