@@ -47,4 +47,14 @@ public class Cuenta {
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
     }
+
+    @Override
+    public String toString() {
+        return "Cuenta{" +
+                "id=" + id +
+                ", usuario='" + usuario + '\'' +
+                ", password='" + password + '\'' +
+                ", empleado=" + empleado +
+                '}';
+    }
 }

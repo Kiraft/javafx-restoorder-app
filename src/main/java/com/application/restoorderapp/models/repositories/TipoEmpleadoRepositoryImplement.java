@@ -22,6 +22,7 @@ public class TipoEmpleadoRepositoryImplement implements Repository<TipoEmpleado>
 
     }
 
+
     @Override
     public void eliminar(Long id) {
 

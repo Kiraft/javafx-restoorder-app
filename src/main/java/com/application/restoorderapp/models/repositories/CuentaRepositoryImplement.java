@@ -13,6 +13,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class CuentaRepositoryImplement implements Repository<Cuenta> {
+    private Connection getConnection() throws SQLException {
+        return ConexionDB.getInstance();
+    }
     @Override
     public List<Cuenta> listar() {
         return null;
@@ -24,8 +27,18 @@ public class CuentaRepositoryImplement implements Repository<Cuenta> {
     }
 
     @Override
-    public void guardar(Cuenta alumno) {
+    public void guardar(Cuenta cuenta) {
+        String sql = "INSERT INTO cuentas(empleados_id, usuario, password) VALUES (?, ?, ?)";
 
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql) ) {
+            stmt.setLong(1, cuenta.getEmpleado().getId());
+            stmt.setString(2, cuenta.getUsuario());
+            stmt.setString(3, cuenta.getPassword());
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("CUENTA - No se guardo el registro");
+        }
     }
 
     @Override
@@ -33,9 +46,6 @@ public class CuentaRepositoryImplement implements Repository<Cuenta> {
 
     }
 
-    private Connection getConnection() throws SQLException {
-        return ConexionDB.getInstance();
-    }
 
     public int login(String usuario, String password) {
         int state = -1;
@@ -80,6 +90,7 @@ public class CuentaRepositoryImplement implements Repository<Cuenta> {
                     e.setRfc(rs.getString("rfc"));
                     e.setEmail(rs.getString("email"));
                     e.setCode(rs.getString("code"));
+                    e.setHas_account(rs.getBoolean("has_account"));
 
                     TipoEmpleado te = new TipoEmpleado();
                     te.setId(rs.getLong("id"));
@@ -89,7 +100,7 @@ public class CuentaRepositoryImplement implements Repository<Cuenta> {
                 }
             }
         } catch (SQLException e) {
-
+            System.out.println("CUENTA - Por Usuario");
         }
 
         return c;

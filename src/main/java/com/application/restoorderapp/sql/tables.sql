@@ -21,6 +21,7 @@ CREATE TABLE empleados (
     rfc VARCHAR(255) UNIQUE NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     code VARCHAR(255) UNIQUE NOT NULL,
+    has_account TINYINT(1) DEFAULT 0 NOT NULL,
 
     FOREIGN KEY (tipos_empleados_id) REFERENCES tipos_empleados(id)
 );

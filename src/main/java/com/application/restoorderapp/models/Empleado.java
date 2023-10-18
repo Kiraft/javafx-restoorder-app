@@ -9,12 +9,14 @@ public class Empleado {
     String email;
     String code;
 
+    Boolean has_account;
+
     TipoEmpleado tipoEmpleado;
 
     public Empleado() {
     }
 
-    public Empleado(Long id, String nombre, String apellidoPaterno, String apellidoMaterno, String rfc, String email, String code, TipoEmpleado tipoEmpleado) {
+    public Empleado(Long id, String nombre, String apellidoPaterno, String apellidoMaterno, String rfc, String email, String code, Boolean has_account, TipoEmpleado tipoEmpleado) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -22,7 +24,16 @@ public class Empleado {
         this.rfc = rfc;
         this.email = email;
         this.code = code;
+        this.has_account = has_account;
         this.tipoEmpleado = tipoEmpleado;
+    }
+
+    public Boolean getHas_account() {
+        return has_account;
+    }
+
+    public void setHas_account(Boolean has_account) {
+        this.has_account = has_account;
     }
 
     public Long getId() {
@@ -87,5 +98,20 @@ public class Empleado {
 
     public void setTipoEmpleado(TipoEmpleado tipoEmpleado) {
         this.tipoEmpleado = tipoEmpleado;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellidoPaterno='" + apellidoPaterno + '\'' +
+                ", apellidoMaterno='" + apellidoMaterno + '\'' +
+                ", rfc='" + rfc + '\'' +
+                ", email='" + email + '\'' +
+                ", code='" + code + '\'' +
+                ", has_account=" + has_account +
+                ", tipoEmpleado=" + tipoEmpleado +
+                '}';
     }
 }

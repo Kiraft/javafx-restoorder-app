@@ -5,31 +5,34 @@ USE resto_order;
 
 DELETE FROM empleados;
 
-INSERT INTO empleados (tipos_empleados_id, nombre, apellido_p, apellido_m, rfc, email, code) VALUES
+INSERT INTO empleados (tipos_empleados_id, nombre, apellido_p, apellido_m, rfc, email, code, has_account) VALUES
  (
-    4,
+    1,
     "Jonathan Osvaldo",
     "Bustamante",
     "Monroy",
     "BUMJ991113HMSSNN05",
     "joniosva@gmail.com",
-    "BUMJ"
+    "BUMJ",
+    1
  ),
  (
-    5,
+    3,
     "Melani Lizeth",
     "Hernandez",
     "Mena",
     "BUMJ991113HMSSNN06",
     "21680098@cuautla.tecnm.mx",
-    "HEMM"
+    "HEMM",
+    0
  ),
  (
-    6,
+    2,
     "Yamir",
     "Zequera",
     "Ayala",
     "BUMJ991113HMSSNN07",
     "21680203@cuautla.tecnm.mx",
-    "ZEAY"
+    "ZEAY",
+    1
  );

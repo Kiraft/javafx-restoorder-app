@@ -1,5 +1,8 @@
 package com.application.restoorderapp.controllers;
+import com.application.restoorderapp.models.Cuenta;
+import com.application.restoorderapp.models.Empleado;
 import com.application.restoorderapp.models.repositories.CuentaRepositoryImplement;
+import com.application.restoorderapp.models.repositories.EmpleadoRepositoryImplement;
 import com.application.restoorderapp.util.StageLoaderCuenta;
 import javafx.scene.control.Alert.AlertType;
 import com.application.restoorderapp.util.AlertUtil;
@@ -68,10 +71,7 @@ public class LoginAndRegisterController {
     private PasswordField txtCodeForget;
 
     @FXML
-    private TextField txtEmailRegister;
-
-    @FXML
-    private TextField txtIdEmployedRegister;
+    private TextField txtCodeRegister;
 
     @FXML
     private PasswordField txtNewPasswordEncoreForget;
@@ -89,7 +89,7 @@ public class LoginAndRegisterController {
     private PasswordField txtPasswordRegister;
 
     @FXML
-    private TextField txtTypeRegister;
+    private TextField txtUserEmployedRegister;
 
     @FXML
     private TextField txtUserForget;
@@ -97,7 +97,8 @@ public class LoginAndRegisterController {
     @FXML
     private TextField txtUserLogin;
 
-    CuentaRepositoryImplement CuentaRepositoryImplement = new CuentaRepositoryImplement();
+    CuentaRepositoryImplement cuentaRepositoryImplement = new CuentaRepositoryImplement();
+    EmpleadoRepositoryImplement empleadoRepositoryImplement = new EmpleadoRepositoryImplement();
     @FXML
     private void LoginAndRegister(ActionEvent event) {
 
@@ -107,7 +108,7 @@ public class LoginAndRegisterController {
                 handleLogin(event);
                 break;
             case "btnRegister":
-
+                handleRegister();
                 break;
 
             default:
@@ -206,13 +207,13 @@ public class LoginAndRegisterController {
             String usuario = txtUserLogin.getText();
             String pass = txtPasswordLogin.getText();
 
-            int state = CuentaRepositoryImplement.login(usuario, pass);
+            int state = cuentaRepositoryImplement.login(usuario, pass);
 
             if (state != -1) {
                 if (state == 1) {
                     try {
                         // MatriculaModel matriculaModel = new MatriculaModel(matricula);
-                        StageLoaderCuenta.load("view_navbar_mesero.fxml", event, CuentaRepositoryImplement.porUsuario(usuario));
+                        StageLoaderCuenta.load("view_navbar_mesero.fxml", event, cuentaRepositoryImplement.porUsuario(usuario));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -228,6 +229,64 @@ public class LoginAndRegisterController {
         } else {
             AlertUtil.showAlert(AlertType.ERROR, "Error inicio de sesion", "Campos vacios porfavor llenarlos");
         }
+    }
+
+    private void handleRegister() {
+        //Esta if verifica si los textfiel estan vacios o no
+        if (!txtUserEmployedRegister.getText().isEmpty() && !txtPasswordRegister.getText().isEmpty() && !txtPasswordEncoreRegister.getText().isEmpty()
+                && !txtCodeRegister.getText().isEmpty()) {
+            //Este if verifica si el largo de la contraseñá es valido
+            if (txtPasswordRegister.getText().length() > 5 && txtPasswordEncoreRegister.getText().length() > 5) {
+                //Este if verifica si las dos contraseñas son iguales
+                if (txtPasswordRegister.getText().equals(txtPasswordEncoreRegister.getText())){
+                    System.out.println(empleadoRepositoryImplement.porCode(txtCodeRegister.getText()));
+                    //Este if verifica si existe un empleado con el codigo ingresado
+                    if (empleadoRepositoryImplement.porCode(txtCodeRegister.getText()) != null) {
+
+                        //Este if verifica si el usuario que se quiere registrar ua existe
+                        if (cuentaRepositoryImplement.porUsuario(txtUserEmployedRegister.getText()) == null) {
+                            Cuenta c = new Cuenta();
+                            c.setUsuario(txtUserEmployedRegister.getText());
+                            c.setPassword(txtPasswordRegister.getText());
+                            Empleado e = empleadoRepositoryImplement.porCode(txtCodeRegister.getText());
+                            e.setHas_account(true);
+                            c.setEmpleado(e);
+
+                            empleadoRepositoryImplement.update(e);
+                            cuentaRepositoryImplement.guardar(c);
+
+                            AlertUtil.showAlert(AlertType.INFORMATION, "Congratulations", "Te has registrado exitosamente");
+                        } else {
+                            AlertUtil.showAlert(AlertType.ERROR, "Error registro", "Este nombre de usuario ya existe tio");
+                        }
+                    } else {
+                        AlertUtil.showAlert(AlertType.ERROR, "Error registro", "Codigo de seguridad no pertenece a un empleado");
+                    }
+
+                    clearFields();
+                }else{
+                    AlertUtil.showAlert(AlertType.ERROR, "Error de Registro", "Las contraseñas no conciden");
+                    txtPasswordRegister.clear();
+                    txtPasswordEncoreRegister.clear();
+                }
+
+            } else {
+                AlertUtil.showAlert(AlertType.ERROR, "Error de Registro", "Tu contraseña debe ser mayor a 5");
+            }
+
+        } else {
+            AlertUtil.showAlert(AlertType.ERROR, "Error de Registro", "Llena todos los campos");
+
+            clearFields();
+
+        }
+    }
+
+    private void clearFields() {
+        txtUserEmployedRegister.clear();
+        txtPasswordRegister.clear();
+        txtPasswordEncoreRegister.clear();
+        txtCodeRegister.clear();
     }
 
 }
