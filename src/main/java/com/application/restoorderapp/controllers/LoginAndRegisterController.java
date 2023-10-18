@@ -212,8 +212,13 @@ public class LoginAndRegisterController {
             if (state != -1) {
                 if (state == 1) {
                     try {
-                        // MatriculaModel matriculaModel = new MatriculaModel(matricula);
-                        StageLoaderCuenta.load("view_navbar_mesero.fxml", event, cuentaRepositoryImplement.porUsuario(usuario));
+                        Cuenta cuenta = cuentaRepositoryImplement.porUsuario(usuario);
+                        if (cuenta.getEmpleado().getTipoEmpleado().getTipo().equals("MESERO")){
+                            StageLoaderCuenta.load("view_navbar_mesero.fxml", event, cuentaRepositoryImplement.porUsuario(usuario));
+                        }else{
+                            StageLoaderCuenta.load("view_menu.fxml", event, cuentaRepositoryImplement.porUsuario(usuario));
+                        }
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

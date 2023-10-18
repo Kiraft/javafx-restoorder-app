@@ -1,5 +1,6 @@
 package com.application.restoorderapp.controllers;
 
+import com.application.restoorderapp.models.Cuenta;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -31,6 +32,12 @@ public class Menu {
 
     @FXML
     private ScrollPane containerPostres;
+
+    private Cuenta cuenta;
+
+    public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
+    }
 
     @FXML
     void changeMenu(ActionEvent event) {
