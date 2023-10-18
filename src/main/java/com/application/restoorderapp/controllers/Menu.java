@@ -1,4 +1,4 @@
-package com.application.restoorderapp.controller;
+package com.application.restoorderapp.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

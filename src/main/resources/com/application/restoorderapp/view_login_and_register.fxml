@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="700.0" maxWidth="902.0" prefHeight="636.0" prefWidth="825.0" style="-fx-background-color: #f7e0a7;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controller.LoginAndRegisterController">
+<AnchorPane maxHeight="700.0" maxWidth="902.0" prefHeight="636.0" prefWidth="825.0" style="-fx-background-color: #f7e0a7;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.LoginAndRegisterController">
    <children>
       <ImageView fitHeight="636.0" fitWidth="827.0" layoutX="-3.0" pickOnBounds="true">
          <image>

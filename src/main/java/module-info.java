@@ -7,6 +7,6 @@ module com.application.restoorderapp {
 
     opens com.application.restoorderapp to javafx.fxml;
     exports com.application.restoorderapp;
-    exports com.application.restoorderapp.controller;
-    opens com.application.restoorderapp.controller to javafx.fxml;
+    exports com.application.restoorderapp.controllers;
+    opens com.application.restoorderapp.controllers to javafx.fxml;
 }

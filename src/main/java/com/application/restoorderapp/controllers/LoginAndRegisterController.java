@@ -1,5 +1,8 @@
-package com.application.restoorderapp.controller;
-
+package com.application.restoorderapp.controllers;
+import com.application.restoorderapp.models.repositories.CuentaRepositoryImplement;
+import com.application.restoorderapp.util.StageLoaderCuenta;
+import javafx.scene.control.Alert.AlertType;
+import com.application.restoorderapp.util.AlertUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -9,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import java.io.IOException;
 
 public class LoginAndRegisterController {
 
@@ -93,8 +97,22 @@ public class LoginAndRegisterController {
     @FXML
     private TextField txtUserLogin;
 
+    CuentaRepositoryImplement CuentaRepositoryImplement = new CuentaRepositoryImplement();
     @FXML
-    void LoginAndRegister(ActionEvent event) {
+    private void LoginAndRegister(ActionEvent event) {
+
+        Node source = (Node) event.getSource();
+        switch (source.getId()) {
+            case "btnLogin":
+                handleLogin(event);
+                break;
+            case "btnRegister":
+
+                break;
+
+            default:
+                break;
+        }
 
     }
 
@@ -181,6 +199,36 @@ public class LoginAndRegisterController {
 //        loadCarrerasInComboBox();
     }
 
+    //Esta funcion se encarga de contener la logica que verifica si un usuario existe
+    private void handleLogin(ActionEvent event) {
+        if (!txtUserLogin.getText().isEmpty() && !txtPasswordLogin.getText().isEmpty()) {
+
+            String usuario = txtUserLogin.getText();
+            String pass = txtPasswordLogin.getText();
+
+            int state = CuentaRepositoryImplement.login(usuario, pass);
+
+            if (state != -1) {
+                if (state == 1) {
+                    try {
+                        // MatriculaModel matriculaModel = new MatriculaModel(matricula);
+                        StageLoaderCuenta.load("view_navbar_mesero.fxml", event, CuentaRepositoryImplement.porUsuario(usuario));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+
+                    AlertUtil.showAlert(AlertType.ERROR, "Error inicio de sesion", "Datos incorrectos intentalo de nuevo");
+                }
+            }else {
+
+                AlertUtil.showAlert(AlertType.ERROR, "Error inicio de sesion", "Problema servidores intentelo mas tarde");
+            }
+
+        } else {
+            AlertUtil.showAlert(AlertType.ERROR, "Error inicio de sesion", "Campos vacios porfavor llenarlos");
+        }
+    }
 
 }
 
