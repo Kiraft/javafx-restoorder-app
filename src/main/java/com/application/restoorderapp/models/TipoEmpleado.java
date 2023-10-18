@@ -1,23 +1,23 @@
 package com.application.restoorderapp.models;
 
 public class TipoEmpleado {
-    Integer id;
+    Long id;
     String tipo;
 
     public TipoEmpleado() {
 
     }
 
-    public TipoEmpleado(Integer id, String tipo) {
+    public TipoEmpleado(Long id, String tipo) {
         this.id = id;
         this.tipo = tipo;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -27,13 +27,5 @@ public class TipoEmpleado {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    @Override
-    public String toString() {
-        return "TipoEmpleado{" +
-                "id=" + id +
-                ", tipo='" + tipo + '\'' +
-                '}';
     }
 }

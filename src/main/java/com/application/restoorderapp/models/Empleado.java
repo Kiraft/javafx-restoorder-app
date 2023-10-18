@@ -1,7 +1,7 @@
 package com.application.restoorderapp.models;
 
 public class Empleado {
-    Integer id;
+    Long id;
     String nombre;
     String apellidoPaterno;
     String apellidoMaterno;
@@ -14,7 +14,7 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(Integer id, String nombre, String apellidoPaterno, String apellidoMaterno, String rfc, String email, String code, TipoEmpleado tipoEmpleado) {
+    public Empleado(Long id, String nombre, String apellidoPaterno, String apellidoMaterno, String rfc, String email, String code, TipoEmpleado tipoEmpleado) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -25,24 +25,16 @@ public class Empleado {
         this.tipoEmpleado = tipoEmpleado;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     public String getNombre() {
         return nombre;
-    }
-
-    public TipoEmpleado getTipoEmpleado() {
-        return tipoEmpleado;
-    }
-
-    public void setTipoEmpleado(TipoEmpleado tipoEmpleado) {
-        this.tipoEmpleado = tipoEmpleado;
     }
 
     public void setNombre(String nombre) {
@@ -89,5 +81,11 @@ public class Empleado {
         this.code = code;
     }
 
+    public TipoEmpleado getTipoEmpleado() {
+        return tipoEmpleado;
+    }
 
+    public void setTipoEmpleado(TipoEmpleado tipoEmpleado) {
+        this.tipoEmpleado = tipoEmpleado;
+    }
 }

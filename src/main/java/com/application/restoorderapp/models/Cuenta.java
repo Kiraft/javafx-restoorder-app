@@ -1,7 +1,7 @@
 package com.application.restoorderapp.models;
 
 public class Cuenta {
-    Integer id;
+    Long id;
     String usuario;
     String password;
     Empleado empleado;
@@ -9,18 +9,18 @@ public class Cuenta {
     public Cuenta() {
     }
 
-    public Cuenta(Integer id, String usuario, String password, Empleado empleado) {
+    public Cuenta(Long id, String usuario, String password, Empleado empleado) {
         this.id = id;
         this.usuario = usuario;
         this.password = password;
         this.empleado = empleado;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
