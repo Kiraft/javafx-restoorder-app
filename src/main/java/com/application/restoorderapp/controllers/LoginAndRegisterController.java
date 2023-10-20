@@ -216,7 +216,7 @@ public class LoginAndRegisterController {
                         if (cuenta.getEmpleado().getTipoEmpleado().getTipo().equals("MESERO")){
                             StageLoaderCuenta.load("view_navbar_mesero.fxml", event, cuentaRepositoryImplement.porUsuario(usuario));
                         }else{
-                            StageLoaderCuenta.load("view_menu.fxml", event, cuentaRepositoryImplement.porUsuario(usuario));
+                            StageLoaderCuenta.load("view_banda_pedidos.fxml", event, cuentaRepositoryImplement.porUsuario(usuario));
                         }
 
                     } catch (IOException e) {
