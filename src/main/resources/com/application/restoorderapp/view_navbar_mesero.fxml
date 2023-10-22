@@ -32,7 +32,7 @@
                   <Font name="System Bold" size="68.0" />
                </font>
             </Button>
-            <Button layoutX="176.0" layoutY="850.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="147.0" style="-fx-background-color: FFFFFF; -fx-text-fill: #000000; -fx-font-size: 20; -fx-background-radius: 10; -fx-font-weight: #10;" text="SALIR">
+            <Button fx:id="btnExit" layoutX="176.0" layoutY="850.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="147.0" style="-fx-background-color: FFFFFF; -fx-text-fill: #000000; -fx-font-size: 20; -fx-background-radius: 10; -fx-font-weight: #10;" text="SALIR">
                <font>
                   <Font size="45.0" />
                </font>
@@ -42,12 +42,12 @@
                   <Image url="@assets/1721532%201.png" />
                </image>
             </ImageView>
-            <Button alignment="BOTTOM_RIGHT" layoutX="49.0" layoutY="619.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="427.0" style="-fx-background-color: 0; -fx-font-size: 30; -fx-border-color: #ffff;" text="TICKETS" textFill="WHITE">
+            <Button fx:id="btnTickets" alignment="BOTTOM_RIGHT" layoutX="49.0" layoutY="619.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="427.0" style="-fx-background-color: 0; -fx-font-size: 30; -fx-border-color: #ffff;" text="TICKETS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="68.0" />
                </font>
             </Button>
-            <Button alignment="BOTTOM_RIGHT" layoutX="51.0" layoutY="733.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="427.0" style="-fx-background-color: 0; -fx-font-size: 30; -fx-border-color: #ffff;" text="SETTINGS" textFill="WHITE">
+            <Button fx:id="btnSettings" alignment="BOTTOM_RIGHT" layoutX="51.0" layoutY="733.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="427.0" style="-fx-background-color: 0; -fx-font-size: 30; -fx-border-color: #ffff;" text="SETTINGS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="68.0" />
                </font>
@@ -67,13 +67,13 @@
                   <Font size="34.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="125.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LUPITA JUAREZ">
+            <Text fx:id="labelNombre" fill="WHITE" layoutX="125.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LUPITA JUAREZ">
                <font>
                   <Font name="System Bold" size="34.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <AnchorPane layoutX="520.0" layoutY="24.0" prefHeight="898.0" prefWidth="1086.0" style="-fx-background-color: #FFFFFF;" />
+      <AnchorPane fx:id="containerLeft" layoutX="520.0" layoutY="24.0" prefHeight="898.0" prefWidth="1086.0" style="-fx-background-color: #FFFFFF;" />
    </children>
 </AnchorPane>
