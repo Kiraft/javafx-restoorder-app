@@ -1,5 +1,5 @@
 package com.application.restoorderapp.util;
-import com.application.restoorderapp.controllers.Menu;
+import com.application.restoorderapp.controllers.MenuController;
 import com.application.restoorderapp.models.Cuenta;
 import com.application.restoorderapp.App;
 import javafx.event.Event;
@@ -37,10 +37,12 @@ public class StageLoaderCuenta {
                 NavbarController navbarController = (NavbarController) controller;
                 navbarController.setCuenta(cuenta);
             }
-            else if (controller instanceof Menu) {
-                Menu menu = (Menu) controller;
-                menu.setCuenta(cuenta);
+            else if (controller instanceof MenuController) {
+                MenuController menuController = (MenuController) controller;
+                menuController.setCuenta(cuenta);
             }
+
+
 //            else if (controller instanceof StatusController) {
 //                StatusController statusController = (StatusController) controller;
 //                statusController.setAlumno(alumno);

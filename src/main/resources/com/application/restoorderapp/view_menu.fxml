@@ -6,75 +6,66 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="1045.0" style="-fx-background-color: #f8e69f;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.Menu">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="898.0" prefWidth="1086.0" style="-fx-background-color: #f8e69f;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.MenuController">
    <children>
-      <TableView layoutX="655.0" layoutY="21.0" prefHeight="317.0" prefWidth="376.0">
+      <TableView layoutX="663.0" layoutY="43.0" prefHeight="317.0" prefWidth="398.0">
         <columns>
-          <TableColumn prefWidth="139.33334350585938" text="Platillo" />
-          <TableColumn minWidth="0.0" prefWidth="67.0" text="Cantidad" />
-            <TableColumn prefWidth="89.0" text="Precio Unitario" />
-            <TableColumn prefWidth="79.0" text="Total" />
+          <TableColumn prefWidth="147.0" text="Platillo" />
+          <TableColumn minWidth="0.0" prefWidth="69.0" text="Cantidad" />
+            <TableColumn prefWidth="94.0" text="Precio Unitario" />
+            <TableColumn prefWidth="87.0" text="Total" />
         </columns>
       </TableView>
-      <Button fx:id="btnInternacional" layoutX="29.0" layoutY="60.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="41.0" prefWidth="152.0" style="-fx-background-color: #b12d33;" text="INTERNACIONAL" textFill="WHITE">
+      <Button fx:id="btnInternacional" layoutX="29.0" layoutY="43.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="41.0" prefWidth="152.0" style="-fx-background-color: #b12d33;" text="INTERNACIONAL" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnCafe" layoutX="485.0" layoutY="60.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="41.0" prefWidth="152.0" text="CAFE">
+      <Button fx:id="btnCafe" layoutX="485.0" layoutY="43.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="41.0" prefWidth="152.0" text="CAFE">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnPostres" layoutX="333.0" layoutY="60.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="41.0" prefWidth="152.0" text="POSTRES">
+      <Button fx:id="btnPostres" layoutX="333.0" layoutY="43.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="41.0" prefWidth="152.0" text="POSTRES">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnAsiatica" layoutX="181.0" layoutY="60.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="41.0" prefWidth="152.0" text="ASIATICA">
+      <Button fx:id="btnAsiatica" layoutX="181.0" layoutY="43.0" mnemonicParsing="false" onAction="#changeMenu" prefHeight="41.0" prefWidth="152.0" text="ASIATICA">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <ScrollPane fx:id="containerInternacional" layoutX="29.0" layoutY="101.0" prefHeight="495.0" prefWidth="608.0" style="-fx-background-color: #2ce28a;" visible="false">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Text layoutX="163.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRODUCTOS INTERNACIONAL" />
-               </children></AnchorPane>
-        </content>
-      </ScrollPane>
-      <ScrollPane fx:id="containerAsiatica" layoutX="29.0" layoutY="101.0" prefHeight="495.0" prefWidth="608.0" style="-fx-background-color: #3f48cc;" visible="false">
+      <ScrollPane fx:id="containerInternacional" layoutX="29.0" layoutY="83.0" prefHeight="771.0" prefWidth="608.0" style="-fx-background-color: #2ce28a;">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Text layoutX="125.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRODUCTOS ASIATICOS" />
-               </children></AnchorPane>
+            <VBox prefHeight="302.0" prefWidth="606.0" />
          </content>
       </ScrollPane>
-      <ScrollPane fx:id="containerPostres" layoutX="29.0" layoutY="101.0" prefHeight="495.0" prefWidth="608.0" style="-fx-background-color: #FFFFFF;" visible="false">
+      <ScrollPane fx:id="containerAsiatica" layoutX="29.0" layoutY="85.0" prefHeight="771.0" prefWidth="608.0" style="-fx-background-color: #3f48cc;" visible="false">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Text layoutX="146.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRODUCTOS POSTRES" />
-               </children></AnchorPane>
+            <VBox prefHeight="311.0" prefWidth="607.0" />
          </content>
       </ScrollPane>
-      <ScrollPane fx:id="containerCafe" layoutX="29.0" layoutY="101.0" prefHeight="495.0" prefWidth="608.0" style="-fx-background-color: #e22c2c;">
+      <ScrollPane fx:id="containerPostres" layoutX="29.0" layoutY="85.0" prefHeight="771.0" prefWidth="608.0" style="-fx-background-color: #FFFFFF;" visible="false">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+            <VBox prefHeight="326.0" prefWidth="606.0" />
          </content>
       </ScrollPane>
-      <Button layoutX="767.0" layoutY="545.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="152.0" text="PAGAR" />
-      <Label layoutX="817.0" layoutY="356.0" text="Total">
+      <ScrollPane fx:id="containerCafe" layoutX="29.0" layoutY="84.0" prefHeight="771.0" prefWidth="608.0" style="-fx-background-color: #e22c2c;" visible="false">
+         <content>
+            <VBox prefHeight="412.0" prefWidth="607.0" />
+         </content>
+      </ScrollPane>
+      <Button layoutX="776.0" layoutY="814.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="152.0" text="PAGAR" />
+      <Label layoutX="825.0" layoutY="378.0" text="Total">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="802.0" layoutY="391.0" text="\$200.00" textAlignment="CENTER">
+      <Label layoutX="810.0" layoutY="413.0" text="\$200.00" textAlignment="CENTER">
          <font>
             <Font size="24.0" />
          </font>

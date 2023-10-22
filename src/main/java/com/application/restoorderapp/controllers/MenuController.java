@@ -7,7 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 
-public class Menu {
+public class MenuController {
 
     @FXML
     private Button btnAsiatica;
