@@ -16,3 +16,5 @@ INSERT INTO cuentas (empleados_id, usuario, password) VALUES
     "yamir",
     "4321"
  );
+
+ SOURCE insert_categorias_menu.sql;

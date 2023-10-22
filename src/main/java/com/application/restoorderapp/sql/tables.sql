@@ -35,3 +35,18 @@ CREATE TABLE cuentas (
     FOREIGN KEY (empleados_id) REFERENCES empleados(id)
 );
 
+CREATE TABLE categorias_menu(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    categoria VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE elementos_menu(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    precio DOUBLE NOT NULL,
+    categorias_menu_id INT UNSIGNED NOT NULL,
+
+    FOREIGN KEY (categorias_menu_id) REFERENCES categorias_menu(id)
+);
+
+SOURCE insert_tipos_empleados.sql;

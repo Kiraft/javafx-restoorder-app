@@ -17,7 +17,7 @@ INSERT INTO empleados (tipos_empleados_id, nombre, apellido_p, apellido_m, rfc, 
     1
  ),
  (
-    3,
+    2,
     "Melani Lizeth",
     "Hernandez",
     "Mena",
@@ -36,3 +36,5 @@ INSERT INTO empleados (tipos_empleados_id, nombre, apellido_p, apellido_m, rfc, 
     "ZEAY",
     1
  );
+
+ SOURCE insert_cuentas.sql;
