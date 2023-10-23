@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="500.0" style="-fx-border-radius: 20;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="500.0" style="-fx-border-radius: 20;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.CardPlatilloController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="202.0" pickOnBounds="true">
          <image>
             <Image url="@../../../../../../../../../Downloads/coffe.PNG" />
          </image></ImageView>
-      <Text fill="#3da1cd" layoutX="417.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agregar">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="214.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cafe americano">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font>
-      </Text>
-      <Text layoutX="214.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taza de cafe americano con azucar al gusto">
+      <Label fx:id="labelDescripcion" alignment="TOP_LEFT" layoutX="214.0" layoutY="42.0" prefHeight="67.0" prefWidth="232.0" wrapText="true">
          <font>
             <Font size="13.0" />
          </font>
-      </Text>
-      <Text layoutX="214.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$30.00">
+      </Label>
+      <Label fx:id="labelNombre" layoutX="214.0" layoutY="7.0" text="Cafe americanoxxxxx">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelPrecio" layoutX="214.0" layoutY="112.0" prefHeight="21.0" prefWidth="178.0" text="\$300000.00">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelAgregar" layoutX="415.0" layoutY="110.0" text="Agregar" textFill="#3da1cd">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
-      </Text>
+      </Label>
    </children>
 </AnchorPane>
