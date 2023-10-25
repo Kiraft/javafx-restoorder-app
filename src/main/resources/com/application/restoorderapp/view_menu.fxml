@@ -41,22 +41,22 @@
       </Button>
       <ScrollPane fx:id="containerInternacional" layoutX="29.0" layoutY="83.0" prefHeight="771.0" prefWidth="608.0" style="-fx-background-color: #2ce28a;">
          <content>
-            <VBox prefHeight="302.0" prefWidth="606.0" />
+            <VBox fx:id="containerInternacionalNodes" prefHeight="302.0" prefWidth="606.0" spacing="10.0" />
          </content>
       </ScrollPane>
       <ScrollPane fx:id="containerAsiatica" layoutX="29.0" layoutY="85.0" prefHeight="771.0" prefWidth="608.0" style="-fx-background-color: #3f48cc;" visible="false">
          <content>
-            <VBox prefHeight="311.0" prefWidth="607.0" />
+            <VBox fx:id="containerAsiaticaNodes" prefHeight="311.0" prefWidth="607.0" spacing="10.0" />
          </content>
       </ScrollPane>
       <ScrollPane fx:id="containerPostres" layoutX="29.0" layoutY="85.0" prefHeight="771.0" prefWidth="608.0" style="-fx-background-color: #FFFFFF;" visible="false">
          <content>
-            <VBox prefHeight="326.0" prefWidth="606.0" />
+            <VBox fx:id="containerPostresNodes" prefHeight="326.0" prefWidth="606.0" spacing="10.0" />
          </content>
       </ScrollPane>
       <ScrollPane fx:id="containerCafe" layoutX="29.0" layoutY="84.0" prefHeight="771.0" prefWidth="608.0" style="-fx-background-color: #e22c2c;" visible="false">
          <content>
-            <VBox prefHeight="412.0" prefWidth="607.0" />
+            <VBox fx:id="containerCafeNodes" prefHeight="412.0" prefWidth="607.0" spacing="10.0" />
          </content>
       </ScrollPane>
       <Button layoutX="776.0" layoutY="814.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="152.0" text="PAGAR" />
