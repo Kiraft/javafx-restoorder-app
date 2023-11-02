@@ -31,28 +31,10 @@ public class MenuController {
     private Button btnPostres;
 
     @FXML
-    private ScrollPane containerAsiatica;
+    private ScrollPane containerPlatillos;
 
     @FXML
-    private VBox containerAsiaticaNodes;
-
-    @FXML
-    private ScrollPane containerCafe;
-
-    @FXML
-    private VBox containerCafeNodes;
-
-    @FXML
-    private ScrollPane containerInternacional;
-
-    @FXML
-    private VBox containerInternacionalNodes;
-
-    @FXML
-    private ScrollPane containerPostres;
-
-    @FXML
-    private VBox containerPostresNodes;
+    private VBox containerPlatillosNodes;
 
     private List<ElementoMenu> internacional;
     private List<ElementoMenu> postres;
@@ -74,14 +56,35 @@ public class MenuController {
 
         switch (source.getId()) {
             case "btnInternacional":
-                showAndHiddenMenu(false, false, false, true);
+
+                loadInternacional();
+
+
+                containerPlatillosNodes.getChildren().clear();
+
+                for (ElementoMenu em : internacional) {
+                    try {
+                        FXMLLoader cardPlatilloLoader = new FXMLLoader(App.class.getResource("view_card_platillo.fxml"));
+                        Parent cardPlatilloRoot = cardPlatilloLoader.load();
+
+                        CardPlatilloController cardPlatilloController = cardPlatilloLoader.getController();
+
+                        cardPlatilloController.setElementoMenu(em);
+
+                        containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
                 break;
             case "btnAsiatica":
-                showAndHiddenMenu(true, false, false, false);
                 loadAsiatica();
 
 
-                containerAsiaticaNodes.getChildren().clear();
+                containerPlatillosNodes.getChildren().clear();
 
                 for (ElementoMenu em : asiatica) {
                     try {
@@ -92,7 +95,7 @@ public class MenuController {
 
                         cardPlatilloController.setElementoMenu(em);
 
-                        containerAsiaticaNodes.getChildren().add(cardPlatilloRoot);
+                        containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
 
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -101,10 +104,50 @@ public class MenuController {
 
                 break;
             case "btnPostres":
-                showAndHiddenMenu(false, true, false, false);
+                loadPostres();
+
+
+                containerPlatillosNodes.getChildren().clear();
+
+                for (ElementoMenu em : postres) {
+                    try {
+                        FXMLLoader cardPlatilloLoader = new FXMLLoader(App.class.getResource("view_card_platillo.fxml"));
+                        Parent cardPlatilloRoot = cardPlatilloLoader.load();
+
+                        CardPlatilloController cardPlatilloController = cardPlatilloLoader.getController();
+
+                        cardPlatilloController.setElementoMenu(em);
+
+                        containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
                 break;
             case "btnCafe":
-                showAndHiddenMenu(false, false, true, false);
+                loadCafe();
+
+
+                containerPlatillosNodes.getChildren().clear();
+
+                for (ElementoMenu em : cafe) {
+                    try {
+                        FXMLLoader cardPlatilloLoader = new FXMLLoader(App.class.getResource("view_card_platillo.fxml"));
+                        Parent cardPlatilloRoot = cardPlatilloLoader.load();
+
+                        CardPlatilloController cardPlatilloController = cardPlatilloLoader.getController();
+
+                        cardPlatilloController.setElementoMenu(em);
+
+                        containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
                 break;
             default:
                 break;
@@ -127,12 +170,12 @@ public class MenuController {
         cafe = elementoMenuRepositoryImplement.listarPorCategoria("CAFE");
     }
 
-    private void showAndHiddenMenu(boolean asiatica, boolean postre, boolean cafe, boolean internacional) {
-        containerAsiatica.setVisible(asiatica);
-        containerPostres.setVisible(postre);
-        containerCafe.setVisible(cafe);
-        containerInternacional.setVisible(internacional);
-    }
+//    private void showAndHiddenMenu(boolean asiatica, boolean postre, boolean cafe, boolean internacional) {
+//        containerAsiatica.setVisible(asiatica);
+//        containerPostres.setVisible(postre);
+//        containerCafe.setVisible(cafe);
+//        containerInternacional.setVisible(internacional);
+//    }
 
 }
 

@@ -9,12 +9,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CardPlatilloController implements Initializable {
+
 
     @FXML
     private Label labelAgregar;
@@ -34,6 +36,16 @@ public class CardPlatilloController implements Initializable {
         this.elementoMenu = elementoMenu;
     }
 
+    @FXML
+    void inOver(MouseEvent event) {
+        labelAgregar.setUnderline(true);
+    }
+
+    @FXML
+    void outOver(MouseEvent event) {
+        labelAgregar.setUnderline(false);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Thread hilo = new Thread(() -> {
@@ -45,7 +57,7 @@ public class CardPlatilloController implements Initializable {
 
             Platform.runLater(() -> {
                 labelNombre.setText(elementoMenu.getNombre());
-                labelPrecio.setText(String.valueOf(elementoMenu.getPrecio()));
+                labelPrecio.setText("$ " + String.valueOf(elementoMenu.getPrecio()));
             });
         });
 
