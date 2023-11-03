@@ -76,9 +76,13 @@ public class CardPlatilloController implements Initializable {
     void agregar(MouseEvent event) {
 
 //        DetallePedido dp = new DetallePedido();
-//        dp.setCantidad();
+//
+//        dp.setCantidad(spinnerCantidad.getValue());
 //        dp.setPrecio_unitario(elementoMenu.getPrecio());
-//        dp.setPrecio_total();
+//        dp.setPrecio_total(spinnerCantidad.getValue() * elementoMenu.getPrecio());
+//        dp.setElementoMenu(elementoMenu);
+//        dp.setOrden_id(1);
+
         elementsMenu.add(elementoMenu);
         labelAgregar.fireEvent(new ActionEvent(ELEMENTO_AGREGADO, null));
     }
@@ -87,7 +91,7 @@ public class CardPlatilloController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
 
-        spinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50, 1);
+        spinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 50, 0);
         spinnerCantidad.setValueFactory(spinner);
 
         Thread hilo = new Thread(() -> {

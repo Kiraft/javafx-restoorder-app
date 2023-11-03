@@ -15,7 +15,7 @@
             <Image url="@assets/fondo-nav-bar.png" />
          </image>
       </ImageView>
-      <Pane layoutX="-6.0" layoutY="-14.0" prefHeight="980.0" prefWidth="425.0" style="-fx-background-color: #b12d;">
+      <Pane layoutX="-6.0" layoutY="-14.0" prefHeight="980.0" prefWidth="425.0" style="-fx-background-color: #BA2B37;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="139.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -27,7 +27,7 @@
                   <Image url="@assets/aroma%20logo%20blanco.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnMenu" alignment="BOTTOM_RIGHT" layoutX="55.0" layoutY="519.0" mnemonicParsing="false" onAction="#navbarChange" prefHeight="75.0" prefWidth="318.0" style="-fx-background-color: 0; -fx-font-size: 30; -fx-border-color: #FFFFFF;" text="MENÚ" textFill="WHITE">
+            <Button fx:id="btnMenu" alignment="BOTTOM_RIGHT" layoutX="55.0" layoutY="519.0" mnemonicParsing="false" onAction="#navbarChange" prefHeight="75.0" prefWidth="318.0" style="-fx-font-size: 30; -fx-border-color: #FFFFFF; -fx-background-color: #BA2B37;" text="MENÚ" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="68.0" />
                </font>
@@ -42,12 +42,12 @@
                   <Image url="@assets/1721532%201.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnTickets" alignment="BOTTOM_RIGHT" layoutX="53.0" layoutY="630.0" mnemonicParsing="false" onAction="#navbarChange" prefHeight="75.0" prefWidth="318.0" style="-fx-background-color: 0; -fx-font-size: 30; -fx-border-color: #ffff;" text="TICKETS" textFill="WHITE">
+            <Button fx:id="btnTickets" alignment="BOTTOM_RIGHT" layoutX="53.0" layoutY="630.0" mnemonicParsing="false" onAction="#navbarChange" prefHeight="75.0" prefWidth="318.0" style="-fx-background-color: #BA2B37; -fx-font-size: 30; -fx-border-color: #FFFFFF;" text="TICKETS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="68.0" />
                </font>
             </Button>
-            <Button fx:id="btnSettings" alignment="BOTTOM_RIGHT" layoutX="55.0" layoutY="744.0" mnemonicParsing="false" onAction="#navbarChange" prefHeight="69.0" prefWidth="318.0" style="-fx-background-color: 0; -fx-font-size: 30; -fx-border-color: #ffff;" text="SETTINGS" textFill="WHITE">
+            <Button fx:id="btnSettings" alignment="BOTTOM_RIGHT" layoutX="55.0" layoutY="744.0" mnemonicParsing="false" onAction="#navbarChange" prefHeight="69.0" prefWidth="318.0" style="-fx-background-color: #BA2B37; -fx-font-size: 30; -fx-border-color: #FFFFFF;" text="SETTINGS" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="68.0" />
                </font>

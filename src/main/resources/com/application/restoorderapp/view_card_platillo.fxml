@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="579.0" style="-fx-border-radius: 10; -fx-border-color: #000000; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.CardPlatilloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="562.0" style="-fx-border-radius: 10; -fx-border-color: #D24343; -fx-background-radius: 10; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.CardPlatilloController">
    <children>
       <ImageView fx:id="imgPlatillo" fitHeight="150.0" fitWidth="202.0" pickOnBounds="true" />
       <Label fx:id="labelDescripcion" alignment="TOP_LEFT" layoutX="214.0" layoutY="42.0" prefHeight="67.0" prefWidth="232.0" wrapText="true">
@@ -24,11 +24,11 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="labelAgregar" layoutX="495.0" layoutY="110.0" onMouseClicked="#agregar" onMouseEntered="#inOver" onMouseExited="#outOver" text="Agregar" textFill="#3da1cd">
+      <Label fx:id="labelAgregar" layoutX="486.0" layoutY="110.0" onMouseClicked="#agregar" onMouseEntered="#inOver" onMouseExited="#outOver" text="Agregar" textFill="#3da1cd">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Spinner fx:id="spinnerCantidad" layoutX="378.0" layoutY="110.0" prefHeight="25.0" prefWidth="100.0" />
+      <Spinner fx:id="spinnerCantidad" layoutX="369.0" layoutY="110.0" prefHeight="25.0" prefWidth="100.0" />
    </children>
 </AnchorPane>
