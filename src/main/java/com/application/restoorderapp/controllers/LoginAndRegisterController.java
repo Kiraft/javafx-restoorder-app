@@ -215,6 +215,7 @@ public class LoginAndRegisterController {
                         Cuenta cuenta = cuentaRepositoryImplement.porUsuario(usuario);
                         if (cuenta.getEmpleado().getTipoEmpleado().getTipo().equals("MESERO")){
                             StageLoaderCuenta.load("view_navbar_mesero.fxml", event, cuentaRepositoryImplement.porUsuario(usuario));
+
                         }else{
                             StageLoaderCuenta.load("view_banda_pedidos.fxml", event, cuentaRepositoryImplement.porUsuario(usuario));
                         }

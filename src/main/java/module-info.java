@@ -1,4 +1,5 @@
 module com.application.restoorderapp {
+    opens com.application.restoorderapp.models;
     requires javafx.controls;
     requires javafx.fxml;
 

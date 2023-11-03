@@ -12,9 +12,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="898.0" prefWidth="1183.0" style="-fx-background-color: #FAEADA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.MenuController">
    <children>
-      <TableView layoutX="663.0" layoutY="43.0" prefHeight="317.0" prefWidth="499.0">
+      <TableView fx:id="tableMainRecibo" layoutX="663.0" layoutY="43.0" prefHeight="317.0" prefWidth="499.0">
         <columns>
-          <TableColumn prefWidth="216.0" text="Platillo" />
+          <TableColumn fx:id="tableColNombre" prefWidth="216.0" text="Platillo" />
           <TableColumn minWidth="0.0" prefWidth="83.0" text="Cantidad" />
             <TableColumn prefWidth="102.0" text="Precio Unitario" />
             <TableColumn prefWidth="96.0" text="Total" />
@@ -43,7 +43,7 @@
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Button>
-      <ScrollPane fx:id="containerPlatillos" layoutX="29.0" layoutY="85.0" prefHeight="771.0" prefWidth="608.0" style="-fx-background-color: #3f48cc;">
+      <ScrollPane fx:id="containerPlatillos" layoutX="29.0" layoutY="85.0" prefHeight="771.0" prefWidth="608.0">
          <content>
             <VBox fx:id="containerPlatillosNodes" alignment="TOP_CENTER" prefHeight="311.0" prefWidth="607.0" spacing="10.0">
                <padding>
@@ -51,7 +51,7 @@
                </padding></VBox>
          </content>
       </ScrollPane>
-      <Button layoutX="776.0" layoutY="814.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="152.0" text="PAGAR" />
+      <Button fx:id="btnPagar" layoutX="837.0" layoutY="799.0" mnemonicParsing="false" onMouseClicked="#pagar" prefHeight="41.0" prefWidth="152.0" text="PAGAR" />
       <Label layoutX="825.0" layoutY="378.0" text="Total">
          <font>
             <Font size="24.0" />

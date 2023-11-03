@@ -7,16 +7,34 @@ import com.application.restoorderapp.models.repositories.ElementoMenuRepositoryI
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class MenuController {
+import static com.application.restoorderapp.controllers.NavbarController.elementsMenu;
+
+public class MenuController implements Initializable {
+
+    @FXML
+    private TableView<ElementoMenu> tableMainRecibo;
+
+    @FXML
+    private TableColumn<ElementoMenu, String> tableColNombre;
+
+    @FXML
+    private Button btnPagar;
 
     @FXML
     private Button btnAsiatica;
@@ -36,147 +54,82 @@ public class MenuController {
     @FXML
     private VBox containerPlatillosNodes;
 
-    private List<ElementoMenu> internacional;
-    private List<ElementoMenu> postres;
-
-    private List<ElementoMenu> asiatica;
-
-    private List<ElementoMenu> cafe;
-
     ElementoMenuRepositoryImplement elementoMenuRepositoryImplement = new ElementoMenuRepositoryImplement();
     private Cuenta cuenta;
+
+    private MenuController menuController;
 
     public void setCuenta(Cuenta cuenta) {
         this.cuenta = cuenta;
     }
 
+    public void setMenuController(MenuController menuController){
+        this.menuController = menuController;
+    }
+
+
     @FXML
-    void changeMenu(ActionEvent event) {
-        Node source = (Node) event.getSource();
+    void pagar(MouseEvent event) {
+        elementsMenu.clear();
+    }
+
+    @FXML
+    void changeMenu(ActionEvent event) {    Node source = (Node) event.getSource();
+
+        containerPlatillosNodes.getChildren().clear();
 
         switch (source.getId()) {
             case "btnInternacional":
-
-                loadInternacional();
-
-
-                containerPlatillosNodes.getChildren().clear();
-
-                for (ElementoMenu em : internacional) {
-                    try {
-                        FXMLLoader cardPlatilloLoader = new FXMLLoader(App.class.getResource("view_card_platillo.fxml"));
-                        Parent cardPlatilloRoot = cardPlatilloLoader.load();
-
-                        CardPlatilloController cardPlatilloController = cardPlatilloLoader.getController();
-
-                        cardPlatilloController.setElementoMenu(em);
-
-                        containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-
+                cargarYMostrarPlatillos("INTERNACIONAL");
                 break;
             case "btnAsiatica":
-                loadAsiatica();
-
-
-                containerPlatillosNodes.getChildren().clear();
-
-                for (ElementoMenu em : asiatica) {
-                    try {
-                        FXMLLoader cardPlatilloLoader = new FXMLLoader(App.class.getResource("view_card_platillo.fxml"));
-                        Parent cardPlatilloRoot = cardPlatilloLoader.load();
-
-                        CardPlatilloController cardPlatilloController = cardPlatilloLoader.getController();
-
-                        cardPlatilloController.setElementoMenu(em);
-
-                        containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-
+                cargarYMostrarPlatillos("ASIATICA");
                 break;
             case "btnPostres":
-                loadPostres();
-
-
-                containerPlatillosNodes.getChildren().clear();
-
-                for (ElementoMenu em : postres) {
-                    try {
-                        FXMLLoader cardPlatilloLoader = new FXMLLoader(App.class.getResource("view_card_platillo.fxml"));
-                        Parent cardPlatilloRoot = cardPlatilloLoader.load();
-
-                        CardPlatilloController cardPlatilloController = cardPlatilloLoader.getController();
-
-                        cardPlatilloController.setElementoMenu(em);
-
-                        containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-
+                cargarYMostrarPlatillos("POSTRES");
                 break;
             case "btnCafe":
-                loadCafe();
-
-
-                containerPlatillosNodes.getChildren().clear();
-
-                for (ElementoMenu em : cafe) {
-                    try {
-                        FXMLLoader cardPlatilloLoader = new FXMLLoader(App.class.getResource("view_card_platillo.fxml"));
-                        Parent cardPlatilloRoot = cardPlatilloLoader.load();
-
-                        CardPlatilloController cardPlatilloController = cardPlatilloLoader.getController();
-
-                        cardPlatilloController.setElementoMenu(em);
-
-                        containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-
+                cargarYMostrarPlatillos("CAFE");
                 break;
             default:
                 break;
         }
     }
 
-    public void loadInternacional(){
-        internacional = elementoMenuRepositoryImplement.listarPorCategoria("INTERNACIONAL");
+    public void cargarPlatillosATable(){
+        tableMainRecibo.setItems(elementsMenu);
     }
 
-    public void loadAsiatica(){
-        asiatica = elementoMenuRepositoryImplement.listarPorCategoria("ASIATICA");
+    private void cargarYMostrarPlatillos(String categoria) {
+        List<ElementoMenu> elementos = elementoMenuRepositoryImplement.listarPorCategoria(categoria);
+
+        for (ElementoMenu em : elementos) {
+            try {
+                FXMLLoader cardPlatilloLoader = new FXMLLoader(App.class.getResource("view_card_platillo.fxml"));
+                Parent cardPlatilloRoot = cardPlatilloLoader.load();
+
+                CardPlatilloController cardPlatilloController = cardPlatilloLoader.getController();
+                cardPlatilloController.setElementoMenu(em);
+                cardPlatilloController.setMenuController(menuController);
+
+                containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public void loadPostres(){
-        postres = elementoMenuRepositoryImplement.listarPorCategoria("POSTRES");
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        tableColNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        tableMainRecibo.setItems(elementsMenu);
+
+        // Añadir observador para el evento ELEMENTO_AGREGADO
+        tableMainRecibo.addEventHandler(CardPlatilloController.ELEMENTO_AGREGADO, event -> {
+            cargarPlatillosATable();
+        });
     }
-
-    public void loadCafe(){
-        cafe = elementoMenuRepositoryImplement.listarPorCategoria("CAFE");
-    }
-
-//    private void showAndHiddenMenu(boolean asiatica, boolean postre, boolean cafe, boolean internacional) {
-//        containerAsiatica.setVisible(asiatica);
-//        containerPostres.setVisible(postre);
-//        containerCafe.setVisible(cafe);
-//        containerInternacional.setVisible(internacional);
-//    }
-
 }
 
 

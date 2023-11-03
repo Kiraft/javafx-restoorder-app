@@ -114,3 +114,5 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id) VALUES
     1
 );
 
+
+ SOURCE insert_mesas.sql;

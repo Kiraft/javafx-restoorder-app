@@ -2,7 +2,10 @@ package com.application.restoorderapp.controllers;
 
 import com.application.restoorderapp.App;
 import com.application.restoorderapp.models.Cuenta;
+import com.application.restoorderapp.models.ElementoMenu;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +18,8 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class NavbarController implements Initializable {
@@ -36,6 +41,8 @@ public class NavbarController implements Initializable {
 
     @FXML
     private Text labelNombre;
+
+    public static ObservableList<ElementoMenu> elementsMenu = FXCollections.observableArrayList();
     private Cuenta cuenta;
 
     public void setCuenta(Cuenta cuenta) {
@@ -61,7 +68,10 @@ public class NavbarController implements Initializable {
                 try {
                     Parent menuRoot = menuLoader.load();
                     MenuController menuController = menuLoader.getController();
+
                     menuController.setCuenta(cuenta);
+                    menuController.setMenuController(menuController);
+
                     containerLeft.getChildren().clear();
                     containerLeft.getChildren().add(menuRoot);
                 } catch (IOException e) {

@@ -4,6 +4,8 @@ import com.application.restoorderapp.App;
 import com.application.restoorderapp.models.Cuenta;
 import com.application.restoorderapp.models.ElementoMenu;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,6 +16,8 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static com.application.restoorderapp.controllers.NavbarController.elementsMenu;
 
 public class CardPlatilloController implements Initializable {
 
@@ -32,8 +36,15 @@ public class CardPlatilloController implements Initializable {
 
     private ElementoMenu elementoMenu;
 
+    public static final EventType<ActionEvent> ELEMENTO_AGREGADO = new EventType<>(ActionEvent.ANY, "ELEMENTO_AGREGADO");
+    private MenuController menuController;
+
     public void setElementoMenu(ElementoMenu elementoMenu) {
         this.elementoMenu = elementoMenu;
+    }
+
+    public void setMenuController(MenuController menuController){
+        this.menuController = menuController;
     }
 
     @FXML
@@ -44,6 +55,13 @@ public class CardPlatilloController implements Initializable {
     @FXML
     void outOver(MouseEvent event) {
         labelAgregar.setUnderline(false);
+    }
+
+
+    @FXML
+    void agregar(MouseEvent event) {
+        elementsMenu.add(elementoMenu);
+        labelAgregar.fireEvent(new ActionEvent(ELEMENTO_AGREGADO, null));
     }
 
     @Override

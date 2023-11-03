@@ -36,6 +36,7 @@ public class StageLoaderCuenta {
             if (controller instanceof NavbarController) {
                 NavbarController navbarController = (NavbarController) controller;
                 navbarController.setCuenta(cuenta);
+
             }
             else if (controller instanceof MenuController) {
                 MenuController menuController = (MenuController) controller;

@@ -49,4 +49,39 @@ CREATE TABLE elementos_menu(
     FOREIGN KEY (categorias_menu_id) REFERENCES categorias_menu(id)
 );
 
+CREATE TABLE mesas(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    status TINYINT(1) DEFAULT 0 NOT NULL,
+    capacidad INT NOT NULL
+);
+
+CREATE TABLE asignaciones_empleados_mesas(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    mesas_id INT UNSIGNED,
+    empleados_id INT UNSIGNED,
+
+    FOREIGN KEY (mesas_id) REFERENCES mesas(id),
+    FOREIGN KEY (empleados_id) REFERENCES empleados(id)
+);
+
+CREATE TABLE ordenes(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE NOT NULL,
+    estado_preparacion VARCHAR(255) NOT NULL,
+    asignaciones_empleados_mesas_id INT UNSIGNED,
+
+    FOREIGN KEY (asignaciones_empleados_mesas_id) REFERENCES asignaciones_empleados_mesas(id)
+);
+
+CREATE TABLE detalles_ordenes(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    cantidad INT NOT NULL,
+    precio_unitario DOUBLE NOT NULL,
+    precio_total DOUBLE NOT NULL,
+    ordenes_id INT UNSIGNED NOT NULL,
+    elementos_menu_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (ordenes_id) REFERENCES ordenes(id),
+    FOREIGN KEY (elementos_menu_id) REFERENCES elementos_menu(id)
+);
+
 SOURCE insert_tipos_empleados.sql;
