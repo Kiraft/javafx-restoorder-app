@@ -52,6 +52,8 @@ public class ElementoMenuRepositoryImplement implements Repository<ElementoMenu>
                     c.setId(rs.getLong("id"));
                     c.setCategoria(rs.getString("categoria"));
                     em.setCategoria(c);
+
+                    em.setImg(rs.getString("img"));
                     elementos.add(em);
                 }
             }

@@ -44,6 +44,7 @@ CREATE TABLE elementos_menu(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
     precio DOUBLE NOT NULL,
+    img VARCHAR(255) NOT NULL,
     categorias_menu_id INT UNSIGNED NOT NULL,
 
     FOREIGN KEY (categorias_menu_id) REFERENCES categorias_menu(id)

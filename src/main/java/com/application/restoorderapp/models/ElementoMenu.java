@@ -5,15 +5,17 @@ public class ElementoMenu {
     String nombre;
     Double precio;
     Categoria categoria;
+    String img;
 
     public ElementoMenu() {
     }
 
-    public ElementoMenu(Long id, String nombre, Double precio, Categoria categoria) {
+    public ElementoMenu(Long id, String nombre, Double precio, Categoria categoria, String img) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.categoria = categoria;
+        this.img = img;
     }
 
     public Long getId() {
@@ -48,6 +50,14 @@ public class ElementoMenu {
         this.categoria = categoria;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     @Override
     public String toString() {
         return "ElementoMenu{" +
@@ -55,6 +65,7 @@ public class ElementoMenu {
                 ", nombre='" + nombre + '\'' +
                 ", precio=" + precio +
                 ", categoria=" + categoria +
+                ", img='" + img + '\'' +
                 '}';
     }
 }

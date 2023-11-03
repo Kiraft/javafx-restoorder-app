@@ -4,6 +4,7 @@ import com.application.restoorderapp.App;
 import com.application.restoorderapp.models.Cuenta;
 import com.application.restoorderapp.models.ElementoMenu;
 import com.application.restoorderapp.models.repositories.ElementoMenuRepositoryImplement;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -129,6 +130,35 @@ public class MenuController implements Initializable {
         tableMainRecibo.addEventHandler(CardPlatilloController.ELEMENTO_AGREGADO, event -> {
             cargarPlatillosATable();
         });
+
+        Thread hilo = new Thread(() -> {
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            Platform.runLater(() -> {
+                List<ElementoMenu> elementos = elementoMenuRepositoryImplement.listarPorCategoria("INTERNACIONAL");
+
+                for (ElementoMenu em : elementos) {
+                    try {
+                        FXMLLoader cardPlatilloLoader = new FXMLLoader(App.class.getResource("view_card_platillo.fxml"));
+                        Parent cardPlatilloRoot = cardPlatilloLoader.load();
+
+                        CardPlatilloController cardPlatilloController = cardPlatilloLoader.getController();
+                        cardPlatilloController.setElementoMenu(em);
+                        cardPlatilloController.setMenuController(menuController);
+
+                        containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        });
+
+        hilo.start();
     }
 }
 
