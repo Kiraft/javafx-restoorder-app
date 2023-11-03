@@ -15,9 +15,9 @@
       <TableView fx:id="tableMainRecibo" layoutX="663.0" layoutY="43.0" prefHeight="317.0" prefWidth="499.0">
         <columns>
           <TableColumn fx:id="tableColNombre" prefWidth="216.0" text="Platillo" />
-          <TableColumn minWidth="0.0" prefWidth="83.0" text="Cantidad" />
-            <TableColumn prefWidth="102.0" text="Precio Unitario" />
-            <TableColumn prefWidth="96.0" text="Total" />
+          <TableColumn fx:id="tableColCantidad" minWidth="0.0" prefWidth="83.0" text="Cantidad" />
+            <TableColumn fx:id="tableColPrecioUnitario" prefWidth="102.0" text="Precio Unitario" />
+            <TableColumn fx:id="tableColTotal" prefWidth="96.0" text="Total" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -51,16 +51,20 @@
                </padding></VBox>
          </content>
       </ScrollPane>
-      <Button fx:id="btnPagar" layoutX="837.0" layoutY="799.0" mnemonicParsing="false" onMouseClicked="#pagar" prefHeight="41.0" prefWidth="152.0" text="PAGAR" />
-      <Label layoutX="825.0" layoutY="378.0" text="Total">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="810.0" layoutY="413.0" text="\$200.00" textAlignment="CENTER">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
+      <Button fx:id="btnPagar" layoutX="837.0" layoutY="796.0" mnemonicParsing="false" onMouseClicked="#pagar" prefHeight="41.0" prefWidth="152.0" text="PAGAR" />
+      <VBox alignment="TOP_CENTER" layoutX="757.0" layoutY="391.0" prefHeight="200.0" prefWidth="311.0">
+         <children>
+            <Label text="Total">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelTotal" text="\$200.00" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
