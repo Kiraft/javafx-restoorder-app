@@ -39,7 +39,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="392.5" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="392.5" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.CardPedidoController">
    <children>
       <Pane prefHeight="140.0" prefWidth="393.0" style="-fx-background-color: #FAEADA;">
          <children>
@@ -48,26 +48,32 @@
                   <Image url="@assets/clock_icon_128481%201.png" />
                </image>
             </ImageView>
-            <Label layoutX="81.0" layoutY="19.0" text="13:40" textFill="#5f4242">
+            <Label fx:id="labelDate" layoutX="81.0" layoutY="19.0" text="13:40" textFill="#5f4242">
                <font>
                   <Font name="Bookshelf Symbol 7" size="42.0" />
                </font>
             </Label>
-            <Label layoutX="26.0" layoutY="88.0" text="#1" textFill="#5f4242">
+            <Label fx:id="labelIdOrden" layoutX="26.0" layoutY="88.0" text="#1" textFill="#5f4242">
                <font>
                   <Font name="Bookshelf Symbol 7" size="26.0" />
                </font>
             </Label>
-            <Label layoutX="72.0" layoutY="88.0" text="Jonathan Osvaldo" textFill="#5f4242">
+            <Label fx:id="labelCliente" layoutX="72.0" layoutY="88.0" text="Jonathan Osvaldo" textFill="#5f4242">
                <font>
                   <Font name="Bookshelf Symbol 7" size="26.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Label alignment="CENTER" layoutX="39.0" layoutY="566.0" prefHeight="54.0" prefWidth="314.0" style="-fx-background-color: #5A9A3D; -fx-border-radius: 15; -fx-background-radius: 15;" text="Completar Orden" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font></Label>
+      <Pane layoutX="-3.0" layoutY="139.0" prefHeight="417.0" prefWidth="396.0" style="-fx-background-color: #5A9A3D;" />
+      <Pane layoutX="-3.0" layoutY="551.0" prefHeight="90.0" prefWidth="399.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label fx:id="btnCompleted" alignment="CENTER" layoutX="43.0" layoutY="18.0" onMouseClicked="#completar" prefHeight="54.0" prefWidth="314.0" style="-fx-background-color: #5A9A3D; -fx-border-radius: 15; -fx-background-radius: 15;" text="Completar Orden" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
