@@ -4,7 +4,9 @@ import com.application.restoorderapp.App;
 import com.application.restoorderapp.models.Cuenta;
 import com.application.restoorderapp.models.DetallePedido;
 import com.application.restoorderapp.models.ElementoMenu;
+import com.application.restoorderapp.models.Orden;
 import com.application.restoorderapp.models.repositories.ElementoMenuRepositoryImplement;
+import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -23,6 +25,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -71,6 +74,7 @@ public class MenuController implements Initializable {
     public static ObservableList<DetallePedido> detallePedido = FXCollections.observableArrayList();
 
     ElementoMenuRepositoryImplement elementoMenuRepositoryImplement = new ElementoMenuRepositoryImplement();
+    OrdenRepositoryImplement ordenRepositoryImplement = new OrdenRepositoryImplement();
     private Cuenta cuenta;
 
     public void setCuenta(Cuenta cuenta) {
@@ -80,7 +84,12 @@ public class MenuController implements Initializable {
 
     @FXML
     void pagar(MouseEvent event) {
-        detallePedido.clear();
+        Orden o = new Orden();
+        o.setFecha(new Date());
+        o.setEstado_preparacion("PREPARANDO");
+        o.setEmpleado(cuenta.getEmpleado());
+
+        ordenRepositoryImplement.guardarReturndId(o);
     }
 
     @FXML

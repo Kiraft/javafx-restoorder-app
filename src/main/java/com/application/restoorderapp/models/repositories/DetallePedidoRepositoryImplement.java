@@ -17,8 +17,8 @@ public class DetallePedidoRepositoryImplement implements Repository<DetallePedid
     }
 
     @Override
-    public void guardar(DetallePedido alumno) {
-
+    public void guardar(DetallePedido detallePedido) {
+        String SQL = "INSERT INTO detalles_ordenes (cantidad, precio_unitario, precio_total, ordenes_id, elementos_menu_id)";
     }
 
     @Override

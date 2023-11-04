@@ -135,4 +135,4 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img) VALUES
 );
 
 
- SOURCE insert_mesas.sql;
+-- SOURCE insert_mesas.sql;

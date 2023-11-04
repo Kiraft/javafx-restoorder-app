@@ -50,28 +50,28 @@ CREATE TABLE elementos_menu(
     FOREIGN KEY (categorias_menu_id) REFERENCES categorias_menu(id)
 );
 
-CREATE TABLE mesas(
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    status TINYINT(1) DEFAULT 0 NOT NULL,
-    capacidad INT NOT NULL
-);
-
-CREATE TABLE asignaciones_empleados_mesas(
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    mesas_id INT UNSIGNED,
-    empleados_id INT UNSIGNED,
-
-    FOREIGN KEY (mesas_id) REFERENCES mesas(id),
-    FOREIGN KEY (empleados_id) REFERENCES empleados(id)
-);
+--CREATE TABLE mesas(
+--    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+--    status TINYINT(1) DEFAULT 0 NOT NULL,
+--    capacidad INT NOT NULL
+--);
+--
+--CREATE TABLE asignaciones_empleados_mesas(
+--    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+--    mesas_id INT UNSIGNED,
+--    empleados_id INT UNSIGNED,
+--
+--    FOREIGN KEY (mesas_id) REFERENCES mesas(id),
+--    FOREIGN KEY (empleados_id) REFERENCES empleados(id)
+--);
 
 CREATE TABLE ordenes(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     fecha DATE NOT NULL,
     estado_preparacion VARCHAR(255) NOT NULL,
-    asignaciones_empleados_mesas_id INT UNSIGNED,
+    empleados_id INT UNSIGNED,
 
-    FOREIGN KEY (asignaciones_empleados_mesas_id) REFERENCES asignaciones_empleados_mesas(id)
+    FOREIGN KEY (empleados_id) REFERENCES empleados(id)
 );
 
 CREATE TABLE detalles_ordenes(
