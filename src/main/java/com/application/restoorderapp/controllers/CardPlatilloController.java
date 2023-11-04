@@ -71,7 +71,7 @@ public class CardPlatilloController implements Initializable {
         dp.setPrecio_unitario(elementoMenu.getPrecio());
         dp.setPrecio_total(spinnerCantidad.getValue() * elementoMenu.getPrecio());
         dp.setElementoMenu(elementoMenu);
-        dp.setOrden_id(1);
+        dp.setOrden(null);
 
         detallePedido.add(dp);
 //        labelAgregar.fireEvent(new ActionEvent(ELEMENTO_AGREGADO, null));

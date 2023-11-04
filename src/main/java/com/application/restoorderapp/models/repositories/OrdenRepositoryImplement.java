@@ -1,5 +1,6 @@
 package com.application.restoorderapp.models.repositories;
 
+import com.application.restoorderapp.models.Empleado;
 import com.application.restoorderapp.models.Orden;
 import com.application.restoorderapp.models.interfaces.Repository;
 import com.application.restoorderapp.util.ConexionDB;
@@ -18,6 +19,24 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
 
     @Override
     public Orden porId(Long id) {
+        String sql = "SELECT * FROM ordenes as o INNER JOIN empleados as e ON (o.empleados_id = e.id) where o.id = ?";
+//        Orden o = null;
+//        try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+//            stmt.setLong(1, id);
+//            try (ResultSet rs = stmt.executeQuery()) {
+//                while (rs.next()) {
+//                    o = new Orden();
+//                    o.setId(rs.getLong("id"));
+//                    o.setFecha(rs.getDate("fecha"));
+//                    o.setEstado_preparacion(rs.getString("estado_preparacion"));
+//                    Empleado e = new Empleado();
+//                    e.setNombre();
+//                    o.setEmpleado();
+//                }
+//            }
+//        } catch (SQLException e) {
+//
+//        }
         return null;
     }
 
@@ -36,7 +55,7 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
         }
     }
 
-    public void guardarReturndId(Orden order) {
+    public Long guardarReturndId(Orden order) {
         String sql = "INSERT INTO ordenes (fecha, estado_preparacion, empleados_id) VALUES (?, ?, ?)";
         Long idGenerado = null; // Inicializar con null si no se genera una clave primaria
 
@@ -69,6 +88,7 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
                 System.out.println("Estado SQL: " + e.getSQLState());
             }
         }
+        return idGenerado;
 
     }
 

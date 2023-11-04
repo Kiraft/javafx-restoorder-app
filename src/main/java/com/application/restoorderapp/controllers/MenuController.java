@@ -5,8 +5,10 @@ import com.application.restoorderapp.models.Cuenta;
 import com.application.restoorderapp.models.DetallePedido;
 import com.application.restoorderapp.models.ElementoMenu;
 import com.application.restoorderapp.models.Orden;
+import com.application.restoorderapp.models.repositories.DetallePedidoRepositoryImplement;
 import com.application.restoorderapp.models.repositories.ElementoMenuRepositoryImplement;
 import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
+import com.application.restoorderapp.util.AlertUtil;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -31,6 +33,14 @@ import java.util.ResourceBundle;
 
 
 public class MenuController implements Initializable {
+
+    @FXML
+    private ComboBox<?> boxMesas;
+
+    @FXML
+    private TextField txtCliente;
+    @FXML
+    private Button btnEliminar;
 
     @FXML
     private Label labelTotal;
@@ -75,6 +85,7 @@ public class MenuController implements Initializable {
 
     ElementoMenuRepositoryImplement elementoMenuRepositoryImplement = new ElementoMenuRepositoryImplement();
     OrdenRepositoryImplement ordenRepositoryImplement = new OrdenRepositoryImplement();
+    DetallePedidoRepositoryImplement detallePedidoRepositoryImplement = new DetallePedidoRepositoryImplement();
     private Cuenta cuenta;
 
     public void setCuenta(Cuenta cuenta) {
@@ -83,13 +94,31 @@ public class MenuController implements Initializable {
 
 
     @FXML
+    void eliminar(ActionEvent event) {
+        detallePedido.clear();
+    }
+    @FXML
     void pagar(MouseEvent event) {
+
         Orden o = new Orden();
         o.setFecha(new Date());
         o.setEstado_preparacion("PREPARANDO");
         o.setEmpleado(cuenta.getEmpleado());
 
-        ordenRepositoryImplement.guardarReturndId(o);
+        Long idOrden = ordenRepositoryImplement.guardarReturndId(o);
+        o.setId(idOrden);
+
+        for (DetallePedido dp: detallePedido) {
+            dp.setOrden(o);
+        }
+
+        for (DetallePedido dp: detallePedido) {
+            detallePedidoRepositoryImplement.guardar(dp);
+        }
+
+        detallePedido.clear();
+        AlertUtil.showAlert(Alert.AlertType.INFORMATION, "PEDIDO REALIZADO CON EXITO", "TU PEDIDO SE HA REALIZADO CON EXITO Y SE HA MANDADO A COCINA");
+
     }
 
     @FXML
