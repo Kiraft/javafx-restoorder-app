@@ -46,11 +46,11 @@ public class Orden {
 
     @Override
     public String toString() {
-        return "Orden{" +
-                "id=" + id +
-                ", fecha=" + fecha +
-                ", estado_preparacion='" + estado_preparacion + '\'' +
-                ", empleado=" + empleado +
+        return "Orden {" +
+                "\n   id = " + id +
+                ", \n   fecha = " + fecha +
+                ", \n   estado_preparacion = '" + estado_preparacion + '\'' +
+                ", \n   empleado = " + empleado +
                 '}';
     }
 }

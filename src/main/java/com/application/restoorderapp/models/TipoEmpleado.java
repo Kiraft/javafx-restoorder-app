@@ -28,4 +28,12 @@ public class TipoEmpleado {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    @Override
+    public String toString() {
+        return "TipoEmpleado{" +
+                "id=" + id +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
 }

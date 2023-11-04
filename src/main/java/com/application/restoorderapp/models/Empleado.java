@@ -102,16 +102,16 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellidoPaterno='" + apellidoPaterno + '\'' +
-                ", apellidoMaterno='" + apellidoMaterno + '\'' +
-                ", rfc='" + rfc + '\'' +
-                ", email='" + email + '\'' +
-                ", code='" + code + '\'' +
-                ", has_account=" + has_account +
-                ", tipoEmpleado=" + tipoEmpleado +
-                '}';
+        return "Empleado {" +
+                "\n                 id=" + id +
+                ", \n                 nombre = '" + nombre + '\'' +
+                ", \n                 apellidoPaterno = '" + apellidoPaterno + '\'' +
+                ", \n                 apellidoMaterno = '" + apellidoMaterno + '\'' +
+                ", \n                 rfc = '" + rfc + '\'' +
+                ", \n                 email = '" + email + '\'' +
+                ", \n                 code = '" + code + '\'' +
+                ", \n                 has_account = " + has_account +
+                ", \n                 tipoEmpleado = " + tipoEmpleado +
+                "\n             }";
     }
 }
