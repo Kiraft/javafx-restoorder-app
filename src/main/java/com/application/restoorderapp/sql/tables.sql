@@ -69,6 +69,7 @@ CREATE TABLE ordenes(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     fecha DATETIME NOT NULL,
     estado_preparacion VARCHAR(255) NOT NULL,
+    cliente VARCHAR(255) NOT NULL,
     empleados_id INT UNSIGNED,
 
     FOREIGN KEY (empleados_id) REFERENCES empleados(id)

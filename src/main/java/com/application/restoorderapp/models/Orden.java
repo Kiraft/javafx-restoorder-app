@@ -6,8 +6,17 @@ public class Orden {
     Long id;
     Date fecha;
     String estado_preparacion;
+    String cliente;
 
     Empleado empleado;
+
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
 
     public Orden() {
     }

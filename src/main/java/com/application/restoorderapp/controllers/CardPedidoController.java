@@ -56,7 +56,8 @@ public class CardPedidoController implements Initializable {
                 SimpleDateFormat formatter = new SimpleDateFormat("HH:mm"); // Formato de hora:minutos
                 String horaYMinutos = formatter.format(orden.getFecha());
                 labelDate.setText(horaYMinutos);
-                labelIdOrden.getId();
+                labelIdOrden.setText("#" + orden.getId());
+                labelCliente.setText(orden.getCliente());
             });
         });
 

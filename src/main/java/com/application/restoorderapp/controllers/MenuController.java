@@ -104,6 +104,7 @@ public class MenuController implements Initializable {
         o.setFecha(new Date());
         o.setEstado_preparacion("PREPARANDO");
         o.setEmpleado(cuenta.getEmpleado());
+        o.setCliente(txtCliente.getText());
 
         Long idOrden = ordenRepositoryImplement.guardarReturndId(o);
         o.setId(idOrden);

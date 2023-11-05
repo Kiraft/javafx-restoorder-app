@@ -27,6 +27,7 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
                 o.setId(rs.getLong("id"));
                 o.setFecha(rs.getTimestamp("fecha"));
                 o.setEstado_preparacion(rs.getString("estado_preparacion"));
+                o.setCliente(rs.getString("cliente"));
                 Empleado e = new Empleado();
                 e.setId(rs.getLong("e.id"));
                 e.setNombre(rs.getString("nombre"));
@@ -76,24 +77,24 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
 
     @Override
     public void guardar(Orden order) {
-        String sql = "INSERT INTO ordenes (fecha, estado_preparacion, empleados_id) VALUES (?, ?, ?)";
-
-        try (PreparedStatement stmt = getConnection().prepareStatement(sql) ) {
-
-            Timestamp timestamp = new Timestamp(order.getFecha().getTime());
-
-            stmt.setTimestamp(1, timestamp);
-            stmt.setString(2, order.getEstado_preparacion());
-            stmt.setLong(3, order.getEmpleado().getId());
-
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("CUENTA - No se guardo el registro");
-        }
+//        String sql = "INSERT INTO ordenes (fecha, estado_preparacion, empleados_id) VALUES (?, ?, ?)";
+//
+//        try (PreparedStatement stmt = getConnection().prepareStatement(sql) ) {
+//
+//            Timestamp timestamp = new Timestamp(order.getFecha().getTime());
+//
+//            stmt.setTimestamp(1, timestamp);
+//            stmt.setString(2, order.getEstado_preparacion());
+//            stmt.setLong(3, order.getEmpleado().getId());
+//
+//            stmt.executeUpdate();
+//        } catch (SQLException e) {
+//            System.out.println("CUENTA - No se guardo el registro");
+//        }
     }
 
     public Long guardarReturndId(Orden order) {
-        String sql = "INSERT INTO ordenes (fecha, estado_preparacion, empleados_id) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO ordenes (fecha, estado_preparacion, empleados_id, cliente) VALUES (?, ?, ?, ?)";
         Long idGenerado = null; // Inicializar con null si no se genera una clave primaria
 
         try (PreparedStatement stmt = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -103,6 +104,7 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
             stmt.setTimestamp(1, timestamp);
             stmt.setString(2, order.getEstado_preparacion());
             stmt.setLong(3, order.getEmpleado().getId());
+            stmt.setString(4, order.getCliente());
 
             int filasAfectadas = stmt.executeUpdate();
             if (filasAfectadas == 1) {
