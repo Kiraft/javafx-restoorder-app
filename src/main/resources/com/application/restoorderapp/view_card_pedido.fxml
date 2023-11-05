@@ -41,7 +41,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="392.5" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.CardPedidoController">
    <children>
-      <Pane prefHeight="140.0" prefWidth="393.0" style="-fx-background-color: #FAEADA;">
+      <Pane layoutX="-3.0" prefHeight="140.0" prefWidth="396.0" style="-fx-background-color: #FAEADA;">
          <children>
             <ImageView fitHeight="54.0" fitWidth="62.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>

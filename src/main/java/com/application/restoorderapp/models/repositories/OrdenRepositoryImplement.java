@@ -25,7 +25,7 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
             while (rs.next()) {
                 Orden o = new Orden();
                 o.setId(rs.getLong("id"));
-                o.setFecha(rs.getDate("fecha"));
+                o.setFecha(rs.getTimestamp("fecha"));
                 o.setEstado_preparacion(rs.getString("estado_preparacion"));
                 Empleado e = new Empleado();
                 e.setId(rs.getLong("e.id"));
@@ -79,7 +79,10 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
         String sql = "INSERT INTO ordenes (fecha, estado_preparacion, empleados_id) VALUES (?, ?, ?)";
 
         try (PreparedStatement stmt = getConnection().prepareStatement(sql) ) {
-            stmt.setDate(1, new Date(order.getFecha().getTime()));
+
+            Timestamp timestamp = new Timestamp(order.getFecha().getTime());
+
+            stmt.setTimestamp(1, timestamp);
             stmt.setString(2, order.getEstado_preparacion());
             stmt.setLong(3, order.getEmpleado().getId());
 
@@ -95,7 +98,9 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
 
         try (PreparedStatement stmt = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
-            stmt.setDate(1, new Date(order.getFecha().getTime()));
+            Timestamp timestamp = new Timestamp(order.getFecha().getTime());
+
+            stmt.setTimestamp(1, timestamp);
             stmt.setString(2, order.getEstado_preparacion());
             stmt.setLong(3, order.getEmpleado().getId());
 

@@ -1,19 +1,15 @@
 package com.application.restoorderapp;
 
-import com.application.restoorderapp.models.Orden;
-import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.util.Date;
 
 public class test {
     public static void main(String[] args) {
-        OrdenRepositoryImplement ori = new OrdenRepositoryImplement();
+        Date fecha = new Date();
 
-        List<Orden> ordens = ori.listar();
+        System.out.println(fecha);
 
-        for (Orden ordenes: ordens) {
-            System.out.println(ordenes);
-        }
     }
 }

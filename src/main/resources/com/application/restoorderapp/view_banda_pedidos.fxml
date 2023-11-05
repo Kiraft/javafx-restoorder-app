@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -72,7 +73,10 @@
         </Pane>
         <ScrollPane layoutY="150.0" prefHeight="701.0" prefWidth="1820.0" style="-fx-background-color: #882323;">
          <content>
-            <HBox fx:id="containerPedidos" prefHeight="699.0" prefWidth="676.0" />
+            <HBox fx:id="containerPedidos" alignment="CENTER_LEFT" prefHeight="699.0" prefWidth="1820.0" spacing="30.0" style="-fx-background-color: #882323;">
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding></HBox>
          </content>
         </ScrollPane>
     </children>

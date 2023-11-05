@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 public class CardPedidoController implements Initializable {
@@ -51,8 +52,11 @@ public class CardPedidoController implements Initializable {
             }
 
             Platform.runLater(() -> {
-//                labelDate.setText("Hola wapo");
-//                labelIdOrden.getId();
+                System.out.println(orden.getFecha());
+                SimpleDateFormat formatter = new SimpleDateFormat("HH:mm"); // Formato de hora:minutos
+                String horaYMinutos = formatter.format(orden.getFecha());
+                labelDate.setText(horaYMinutos);
+                labelIdOrden.getId();
             });
         });
 
