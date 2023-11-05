@@ -100,25 +100,38 @@ public class MenuController implements Initializable {
     @FXML
     void pagar(MouseEvent event) {
 
-        Orden o = new Orden();
-        o.setFecha(new Date());
-        o.setEstado_preparacion("PREPARANDO");
-        o.setEmpleado(cuenta.getEmpleado());
-        o.setCliente(txtCliente.getText());
+        if(!detallePedido.isEmpty()){
 
-        Long idOrden = ordenRepositoryImplement.guardarReturndId(o);
-        o.setId(idOrden);
+            if(!txtCliente.getText().isEmpty()){
+                Orden o = new Orden();
+                o.setFecha(new Date());
+                o.setEstado_preparacion("PREPARANDO");
+                o.setEmpleado(cuenta.getEmpleado());
+                o.setCliente(txtCliente.getText());
 
-        for (DetallePedido dp: detallePedido) {
-            dp.setOrden(o);
+                Long idOrden = ordenRepositoryImplement.guardarReturndId(o);
+                o.setId(idOrden);
+
+                for (DetallePedido dp: detallePedido) {
+                    dp.setOrden(o);
+                }
+
+                for (DetallePedido dp: detallePedido) {
+                    detallePedidoRepositoryImplement.guardar(dp);
+                }
+
+                detallePedido.clear();
+                AlertUtil.showAlert(Alert.AlertType.INFORMATION, "PEDIDO REALIZADO CON EXITO", "TU PEDIDO SE HA REALIZADO CON EXITO Y SE HA MANDADO A COCINA");
+                txtCliente.clear();
+            }else{
+                AlertUtil.showAlert(Alert.AlertType.INFORMATION, "ERROR AL REALIZAR PEDIDO", "DEBES AGREGAR OBLIGATORIAMENTE UN NOMBRE AL CLIENTE");
+            }
+
+        }else{
+            AlertUtil.showAlert(Alert.AlertType.INFORMATION, "ERROR AL REALIZAR PEDIDO", "DEBES AGREGAR POR LO MENOS UN PLATILLO O BEBIDA");
         }
 
-        for (DetallePedido dp: detallePedido) {
-            detallePedidoRepositoryImplement.guardar(dp);
-        }
 
-        detallePedido.clear();
-        AlertUtil.showAlert(Alert.AlertType.INFORMATION, "PEDIDO REALIZADO CON EXITO", "TU PEDIDO SE HA REALIZADO CON EXITO Y SE HA MANDADO A COCINA");
 
     }
 

@@ -31,7 +31,7 @@ public class BandaPedidosController implements Initializable {
             System.out.println(o);
         }
     }
-    List<Orden> ordenes;
+    public static List<Orden> ordenes;
 
 
     OrdenRepositoryImplement ordenRepositoryImplement = new OrdenRepositoryImplement();
