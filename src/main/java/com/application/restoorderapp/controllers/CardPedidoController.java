@@ -51,8 +51,8 @@ public class CardPedidoController implements Initializable {
             }
 
             Platform.runLater(() -> {
-                labelDate.setText(orden.getFecha().toString());
-                labelIdOrden.getId();
+//                labelDate.setText("Hola wapo");
+//                labelIdOrden.getId();
             });
         });
 

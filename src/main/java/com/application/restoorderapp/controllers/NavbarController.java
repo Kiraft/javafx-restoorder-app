@@ -3,6 +3,7 @@ package com.application.restoorderapp.controllers;
 import com.application.restoorderapp.App;
 import com.application.restoorderapp.models.Cuenta;
 import com.application.restoorderapp.models.DetallePedido;
+import com.application.restoorderapp.util.StageLoaderCuenta;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -106,6 +107,11 @@ public class NavbarController implements Initializable {
                 }
 
                 break;
+            case "btnExit":
+
+                StageLoaderCuenta.load("view_login_and_register.fxml", event, null);
+
+                break;
 
             default:
                 break;
@@ -137,6 +143,8 @@ public class NavbarController implements Initializable {
 
                     containerLeft.getChildren().clear();
                     containerLeft.getChildren().add(menuRoot);
+                    // Objeto usuario
+                    System.out.println(cuenta);
 
                 } catch (IOException e) {
                     e.printStackTrace();

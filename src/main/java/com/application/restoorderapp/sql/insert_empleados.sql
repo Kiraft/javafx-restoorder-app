@@ -17,14 +17,14 @@ INSERT INTO empleados (tipos_empleados_id, nombre, apellido_p, apellido_m, rfc, 
     1
  ),
  (
-    2,
+    1,
     "Melani Lizeth",
     "Hernandez",
     "Mena",
     "BUMJ991113HMSSNN06",
     "21680098@cuautla.tecnm.mx",
     "HEMM",
-    0
+    1
  ),
  (
     2,

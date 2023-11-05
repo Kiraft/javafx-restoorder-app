@@ -12,6 +12,11 @@ INSERT INTO cuentas (empleados_id, usuario, password) VALUES
     "4321"
  ),
  (
+     2,
+     "mela",
+     "4321"
+ ),
+ (
     3,
     "yamir",
     "4321"
