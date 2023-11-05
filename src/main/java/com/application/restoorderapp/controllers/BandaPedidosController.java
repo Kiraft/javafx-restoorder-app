@@ -2,6 +2,7 @@ package com.application.restoorderapp.controllers;
 
 import com.application.restoorderapp.App;
 import com.application.restoorderapp.models.Orden;
+import com.application.restoorderapp.models.repositories.DetallePedidoRepositoryImplement;
 import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -35,6 +36,7 @@ public class BandaPedidosController implements Initializable {
 
 
     OrdenRepositoryImplement ordenRepositoryImplement = new OrdenRepositoryImplement();
+    DetallePedidoRepositoryImplement detallePedidoRepositoryImplement = new DetallePedidoRepositoryImplement();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -48,6 +50,10 @@ public class BandaPedidosController implements Initializable {
 
             Platform.runLater(() -> {
                 ordenes = ordenRepositoryImplement.listar();
+
+                for (Orden o : ordenes) {
+                    o.setDetallePedidos(detallePedidoRepositoryImplement.listarPorIdOrden(o));
+                }
 
                 for (Orden o : ordenes) {
                     try {

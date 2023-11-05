@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,6 +18,10 @@ import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 public class CardPedidoController implements Initializable {
+
+
+    @FXML
+    private VBox containerDetallesPedido;
 
     @FXML
     private Label btnCompleted;
@@ -58,6 +63,13 @@ public class CardPedidoController implements Initializable {
                 labelDate.setText(horaYMinutos);
                 labelIdOrden.setText("#" + orden.getId());
                 labelCliente.setText(orden.getCliente());
+
+                for (DetallePedido dp :orden.getDetallePedidos()) {
+                    Label label = new Label();
+                    label.setStyle("-fx-font-size: 22; -fx-text-fill: white; -fx-font-weight: bold;");
+                    label.setText(dp.getCantidad() + " " + dp.getElementoMenu().getNombre());
+                    containerDetallesPedido.getChildren().add(label);
+                }
             });
         });
 

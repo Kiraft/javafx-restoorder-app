@@ -1,6 +1,8 @@
 package com.application.restoorderapp.models;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Orden {
     Long id;
@@ -10,6 +12,20 @@ public class Orden {
 
     Empleado empleado;
 
+    List<DetallePedido> detallePedidos;
+
+    public Orden() {
+        detallePedidos = new ArrayList<>();
+    }
+
+    public List<DetallePedido> getDetallePedidos() {
+        return detallePedidos;
+    }
+
+    public void setDetallePedidos(List<DetallePedido> detallePedidos) {
+        this.detallePedidos = detallePedidos;
+    }
+
     public String getCliente() {
         return cliente;
     }
@@ -18,8 +34,6 @@ public class Orden {
         this.cliente = cliente;
     }
 
-    public Orden() {
-    }
 
     public Long getId() {
         return id;
