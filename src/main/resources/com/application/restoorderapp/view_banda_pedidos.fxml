@@ -71,7 +71,7 @@
                 </Button>
             </children>
         </Pane>
-        <ScrollPane layoutY="150.0" prefHeight="701.0" prefWidth="1820.0" style="-fx-background-color: #882323;">
+        <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="150.0" prefHeight="701.0" prefWidth="1820.0" style="-fx-background-color: #882323;">
          <content>
             <HBox fx:id="containerPedidos" alignment="CENTER_LEFT" prefHeight="699.0" prefWidth="1820.0" spacing="30.0" style="-fx-background-color: #882323;">
                <padding>

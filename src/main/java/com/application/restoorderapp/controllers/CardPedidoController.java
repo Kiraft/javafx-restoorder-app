@@ -66,7 +66,7 @@ public class CardPedidoController implements Initializable {
 
                 for (DetallePedido dp :orden.getDetallePedidos()) {
                     Label label = new Label();
-                    label.setStyle("-fx-font-size: 22; -fx-text-fill: white; -fx-font-weight: bold;");
+                    label.setStyle("-fx-font-size: 22; -fx-text-fill: black; -fx-font-weight: bold;");
                     label.setText(dp.getCantidad() + " " + dp.getElementoMenu().getNombre());
                     containerDetallesPedido.getChildren().add(label);
                 }

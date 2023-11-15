@@ -34,6 +34,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -67,11 +68,7 @@
             </Label>
          </children>
       </Pane>
-      <VBox fx:id="containerDetallesPedido" layoutX="-3.0" layoutY="139.0" prefHeight="417.0" prefWidth="396.0" spacing="15.0" style="-fx-background-color: #5A9A3D;">
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding></VBox>
-      <Pane layoutX="-3.0" layoutY="551.0" prefHeight="90.0" prefWidth="399.0" style="-fx-background-color: #000000;">
+      <Pane layoutX="-3.0" layoutY="551.0" prefHeight="90.0" prefWidth="396.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <Label fx:id="btnCompleted" alignment="CENTER" layoutX="43.0" layoutY="18.0" onMouseClicked="#completar" prefHeight="54.0" prefWidth="314.0" style="-fx-background-color: #5A9A3D; -fx-border-radius: 15; -fx-background-radius: 15;" text="Completar Orden" textFill="WHITE">
                <font>
@@ -80,5 +77,14 @@
             </Label>
          </children>
       </Pane>
+      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="-3.0" layoutY="140.0" prefHeight="411.0" prefWidth="396.0">
+         <content>
+            <VBox fx:id="containerDetallesPedido" prefHeight="402.0" prefWidth="394.0" spacing="15.0" style="-fx-background-color: #FFFFFF;">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
