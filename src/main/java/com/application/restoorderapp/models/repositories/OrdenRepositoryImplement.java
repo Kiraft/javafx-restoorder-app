@@ -1,5 +1,6 @@
 package com.application.restoorderapp.models.repositories;
 
+import com.application.restoorderapp.models.Cuenta;
 import com.application.restoorderapp.models.Empleado;
 import com.application.restoorderapp.models.Orden;
 import com.application.restoorderapp.models.TipoEmpleado;
@@ -140,7 +141,16 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
 
     }
 
-    public void update(Orden alumno) {
+    public void update(Orden orden) {
+        String sql =  "UPDATE ordenes SET done = 1 WHERE id = ? ";
+
+        try (PreparedStatement stmt = getConnection().prepareStatement(sql) ) {
+            stmt.setLong(1, orden.getId());
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+
+        }
 
     }
 }

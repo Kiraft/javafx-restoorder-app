@@ -3,16 +3,14 @@ package com.application.restoorderapp.controllers;
 import com.application.restoorderapp.models.Cuenta;
 import com.application.restoorderapp.models.DetallePedido;
 import com.application.restoorderapp.models.Orden;
+import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
@@ -37,13 +35,14 @@ public class CardPedidoController implements Initializable {
 
     private Orden orden;
 
+    OrdenRepositoryImplement ordenRepositoryImplement = new OrdenRepositoryImplement();
     public void setOrden(Orden orden) {
         this.orden = orden;
     }
 
     @FXML
     void completar(MouseEvent event) {
-
+        ordenRepositoryImplement.update(orden);
     }
 
     @Override

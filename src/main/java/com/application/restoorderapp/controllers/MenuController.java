@@ -194,10 +194,6 @@ public class MenuController implements Initializable {
         tableColTotal.setCellValueFactory(new PropertyValueFactory<>("precio_total"));
         tableMainRecibo.setItems(detallePedido);
 
-//        // Añadir observador para el evento ELEMENTO_AGREGADO
-//        tableMainRecibo.addEventHandler(CardPlatilloController.ELEMENTO_AGREGADO, event -> {
-//            cargarPlatillosATable();
-//        });
 
         detallePedido.addListener((ListChangeListener<DetallePedido>) change -> {
             while (change.next()) {
