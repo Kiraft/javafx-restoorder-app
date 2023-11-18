@@ -47,6 +47,7 @@ public class ElementoMenuRepositoryImplement implements Repository<ElementoMenu>
                     em.setId(rs.getLong("id"));
                     em.setNombre(rs.getString("nombre"));
                     em.setPrecio(rs.getDouble("precio"));
+                    em.setDescripcion(rs.getString("descripcion"));
 
                     Categoria c = new Categoria();
                     c.setId(rs.getLong("id"));
@@ -77,6 +78,7 @@ public class ElementoMenuRepositoryImplement implements Repository<ElementoMenu>
                     em.setId(rs.getLong("id"));
                     em.setNombre(rs.getString("nombre"));
                     em.setPrecio(rs.getDouble("precio"));
+                    em.setDescripcion(rs.getString("descripcion"));
 
                     Categoria c = new Categoria();
                     c.setId(rs.getLong("id"));

@@ -3,7 +3,7 @@ USE resto_order;
 DELETE FROM elementos_menu;
 
 --Insertar postres
-INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img) VALUES
+INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion) VALUES
 (
     "PANQUE AROMA",
     84,
@@ -41,7 +41,7 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img) VALUES
 );
 
 --Insertar asiatica
-INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img) VALUES
+INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion) VALUES
 (
     "SOPA RAMEN",
     105,
@@ -79,7 +79,7 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img) VALUES
 );
 
 --Insertar cafe
-INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img) VALUES
+INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion) VALUES
 (
     "AMERICANO LIGERO",
     32,
@@ -117,7 +117,7 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img) VALUES
 );
 
 --Insertar internacional
-INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img) VALUES
+INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion) VALUES
 (
     "PECHUGA A LA PARMESANA",
     240,

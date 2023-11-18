@@ -70,6 +70,7 @@ public class DetallePedidoRepositoryImplement implements Repository<DetallePedid
                     em.setNombre(rs.getString("nombre"));
                     em.setPrecio(rs.getDouble("precio"));
                     em.setImg(rs.getString("img"));
+                    em.setDescripcion(rs.getString("descripcion"));
 
                     Categoria c = new Categoria();
                     c.setId(rs.getLong("cm.id"));

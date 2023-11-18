@@ -46,6 +46,7 @@ CREATE TABLE elementos_menu(
     precio DOUBLE NOT NULL,
     img VARCHAR(255) NOT NULL,
     categorias_menu_id INT UNSIGNED NOT NULL,
+    descripcion VARCHAR(255) NOT NULL,
 
     FOREIGN KEY (categorias_menu_id) REFERENCES categorias_menu(id)
 );

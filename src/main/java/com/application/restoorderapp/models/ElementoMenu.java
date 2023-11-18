@@ -7,15 +7,18 @@ public class ElementoMenu {
     Categoria categoria;
     String img;
 
+    String descripcion;
+
     public ElementoMenu() {
     }
 
-    public ElementoMenu(Long id, String nombre, Double precio, Categoria categoria, String img) {
+    public ElementoMenu(Long id, String nombre, Double precio, Categoria categoria, String img, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.categoria = categoria;
         this.img = img;
+        this.descripcion = descripcion;
     }
 
     public Long getId() {
@@ -58,6 +61,14 @@ public class ElementoMenu {
         this.img = img;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     @Override
     public String toString() {
         return "ElementoMenu{" +
@@ -66,6 +77,7 @@ public class ElementoMenu {
                 ", precio=" + precio +
                 ", categoria=" + categoria +
                 ", img='" + img + '\'' +
+                ", descripcion='" + descripcion + '\'' +
                 '}';
     }
 }

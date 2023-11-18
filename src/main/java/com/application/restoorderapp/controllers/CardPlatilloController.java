@@ -101,6 +101,7 @@ public class CardPlatilloController implements Initializable {
                 labelNombre.setText(elementoMenu.getNombre());
                 labelPrecio.setText("$ " + String.valueOf(elementoMenu.getPrecio()));
                 imgPlatillo.setImage(img);
+                labelDescripcion.setText(elementoMenu.getDescripcion());
             });
         });
 
