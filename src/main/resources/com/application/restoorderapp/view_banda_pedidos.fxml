@@ -55,6 +55,11 @@
                         <Font name="System Bold" size="44.0" />
                     </font>
                 </Text>
+            <Button fx:id="btnExit" layoutX="1538.0" layoutY="38.0" mnemonicParsing="false" onAction="#exit" prefHeight="76.0" prefWidth="217.0" style="-fx-background-color: #882323; -fx-border-color: #FFFFFF; -fx-border-width: 2; -fx-border-radius: 10;" text="CERRAR SESION" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
             </children>
         </Pane>
         <Pane layoutY="850.0" prefHeight="130.0" prefWidth="1820.0" style="-fx-background-color: #882323;">

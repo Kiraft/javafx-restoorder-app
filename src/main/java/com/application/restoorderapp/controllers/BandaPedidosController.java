@@ -4,6 +4,7 @@ import com.application.restoorderapp.App;
 import com.application.restoorderapp.models.Orden;
 import com.application.restoorderapp.models.repositories.DetallePedidoRepositoryImplement;
 import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
+import com.application.restoorderapp.util.StageLoaderCuenta;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +22,9 @@ import java.util.ResourceBundle;
 public class BandaPedidosController implements Initializable {
 
     @FXML
+    private Button btnExit;
+
+    @FXML
     private Button btnxd;
 
     @FXML
@@ -31,6 +35,12 @@ public class BandaPedidosController implements Initializable {
         for (Orden o: ordenes) {
             System.out.println(o);
         }
+    }
+
+
+    @FXML
+    void exit(ActionEvent event) throws IOException {
+        StageLoaderCuenta.load("view_login_and_register.fxml", event, null);
     }
     public static List<Orden> ordenes;
 
