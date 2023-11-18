@@ -71,6 +71,7 @@ CREATE TABLE ordenes(
     estado_preparacion VARCHAR(255) NOT NULL,
     cliente VARCHAR(255) NOT NULL,
     empleados_id INT UNSIGNED,
+    done TINYINT(1) DEFAULT 0 NOT NULL,
 
     FOREIGN KEY (empleados_id) REFERENCES empleados(id)
 );
