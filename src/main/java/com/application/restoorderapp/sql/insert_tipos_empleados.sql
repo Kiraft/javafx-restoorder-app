@@ -1,4 +1,4 @@
--- mysql -h 35.239.87.59 -u root -p
+-- mysql -h 35.232.239.181 -u root -p
 -- lolxx4321
 
 USE resto_order;

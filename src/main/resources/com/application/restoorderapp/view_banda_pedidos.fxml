@@ -55,16 +55,16 @@
                         <Font name="System Bold" size="44.0" />
                     </font>
                 </Text>
-            <Button fx:id="btnExit" layoutX="1538.0" layoutY="38.0" mnemonicParsing="false" onAction="#exit" prefHeight="76.0" prefWidth="217.0" style="-fx-background-color: #882323; -fx-border-color: #FFFFFF; -fx-border-width: 2; -fx-border-radius: 10;" text="CERRAR SESION" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Button>
+            <ImageView fx:id="imgReload" fitHeight="113.0" fitWidth="174.0" layoutX="1603.0" layoutY="16.0" onMouseClicked="#reloadOrdenes" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/27e1bd4903a0e30e8e1c9daaf21b780704be85f408a163876c439dd6459f6384%201.png" />
+               </image>
+            </ImageView>
             </children>
         </Pane>
         <Pane layoutY="850.0" prefHeight="130.0" prefWidth="1820.0" style="-fx-background-color: #882323;">
             <children>
-                <Button fx:id="btnxd" layoutX="64.0" layoutY="34.0" mnemonicParsing="false" onAction="#xd" style="-fx-background-color: 0; -fx-border-color: #FFFFFF; -fx-border-width: 5 0 0 0;" text="Pedidos activos" textFill="WHITE">
+                <Button layoutX="64.0" layoutY="34.0" mnemonicParsing="false" style="-fx-background-color: 0; -fx-border-color: #FFFFFF; -fx-border-width: 5 0 0 0;" text="Pedidos activos" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="27.0" />
                     </font>
@@ -74,6 +74,11 @@
                         <Font name="System Bold" size="27.0" />
                     </font>
                 </Button>
+            <Button fx:id="btnExit" layoutX="1546.0" layoutY="27.0" mnemonicParsing="false" onAction="#exit" prefHeight="76.0" prefWidth="217.0" style="-fx-background-color: #882323; -fx-border-color: #FFFFFF; -fx-border-width: 2; -fx-border-radius: 10;" text="CERRAR SESION" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
             </children>
         </Pane>
         <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="150.0" prefHeight="701.0" prefWidth="1820.0" style="-fx-background-color: #882323;">

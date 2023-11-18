@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
@@ -25,29 +26,44 @@ public class BandaPedidosController implements Initializable {
     private Button btnExit;
 
     @FXML
-    private Button btnxd;
-
-    @FXML
     private HBox containerPedidos;
 
-    @FXML
-    void xd(ActionEvent event) {
-        for (Orden o: ordenes) {
-            System.out.println(o);
-        }
-    }
+    public static List<Orden> ordenes;
+    OrdenRepositoryImplement ordenRepositoryImplement = new OrdenRepositoryImplement();
+    DetallePedidoRepositoryImplement detallePedidoRepositoryImplement = new DetallePedidoRepositoryImplement();
 
+    @FXML
+    void reloadOrdenes(MouseEvent event) {
+        containerPedidos.getChildren().clear();
+        cargarOrdenes();
+    }
 
     @FXML
     void exit(ActionEvent event) throws IOException {
         StageLoaderCuenta.load("view_login_and_register.fxml", event, null);
     }
-    public static List<Orden> ordenes;
 
+    private void cargarOrdenes(){
+        ordenes = ordenRepositoryImplement.listar();
 
-    OrdenRepositoryImplement ordenRepositoryImplement = new OrdenRepositoryImplement();
-    DetallePedidoRepositoryImplement detallePedidoRepositoryImplement = new DetallePedidoRepositoryImplement();
+        for (Orden o : ordenes) {
+            o.setDetallePedidos(detallePedidoRepositoryImplement.listarPorIdOrden(o));
+        }
 
+        for (Orden o : ordenes) {
+            try {
+                FXMLLoader cardPedidoLoader = new FXMLLoader(App.class.getResource("view_card_pedido.fxml"));
+                Parent cardPedidoRoot = cardPedidoLoader.load();
+
+                CardPedidoController cardPedidoController = cardPedidoLoader.getController();
+                cardPedidoController.setOrden(o);
+
+                containerPedidos.getChildren().add(cardPedidoRoot);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -59,25 +75,7 @@ public class BandaPedidosController implements Initializable {
             }
 
             Platform.runLater(() -> {
-                ordenes = ordenRepositoryImplement.listar();
-
-                for (Orden o : ordenes) {
-                    o.setDetallePedidos(detallePedidoRepositoryImplement.listarPorIdOrden(o));
-                }
-
-                for (Orden o : ordenes) {
-                    try {
-                        FXMLLoader cardPedidoLoader = new FXMLLoader(App.class.getResource("view_card_pedido.fxml"));
-                        Parent cardPedidoRoot = cardPedidoLoader.load();
-
-                        CardPedidoController cardPedidoController = cardPedidoLoader.getController();
-                        cardPedidoController.setOrden(o);
-
-                        containerPedidos.getChildren().add(cardPedidoRoot);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+                cargarOrdenes();
             });
         });
 
