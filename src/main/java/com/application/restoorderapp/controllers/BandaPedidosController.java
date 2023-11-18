@@ -2,6 +2,7 @@ package com.application.restoorderapp.controllers;
 
 import com.application.restoorderapp.App;
 import com.application.restoorderapp.models.Orden;
+import com.application.restoorderapp.models.interfaces.OrdenObserver;
 import com.application.restoorderapp.models.repositories.DetallePedidoRepositoryImplement;
 import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
 import com.application.restoorderapp.util.StageLoaderCuenta;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class BandaPedidosController implements Initializable {
+public class BandaPedidosController implements Initializable, OrdenObserver {
 
     @FXML
     private Button btnExit;
@@ -65,6 +66,7 @@ public class BandaPedidosController implements Initializable {
 
                 CardPedidoController cardPedidoController = cardPedidoLoader.getController();
                 cardPedidoController.setOrden(o);
+                cardPedidoController.setOrdenObserver(this); // Establecer el observador
 
                 containerPedidos.getChildren().add(cardPedidoRoot);
             } catch (IOException e) {
@@ -88,5 +90,11 @@ public class BandaPedidosController implements Initializable {
         });
 
         hilo.start();
+    }
+
+    @Override
+    public void actualizarOrdenes() {
+        containerPedidos.getChildren().clear();
+        cargarOrdenes();
     }
 }

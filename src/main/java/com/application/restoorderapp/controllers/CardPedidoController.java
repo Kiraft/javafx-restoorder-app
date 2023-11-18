@@ -3,6 +3,7 @@ package com.application.restoorderapp.controllers;
 import com.application.restoorderapp.models.Cuenta;
 import com.application.restoorderapp.models.DetallePedido;
 import com.application.restoorderapp.models.Orden;
+import com.application.restoorderapp.models.interfaces.OrdenObserver;
 import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -35,6 +36,13 @@ public class CardPedidoController implements Initializable {
 
     private Orden orden;
 
+//    private Orden ordenO;
+    private OrdenObserver ordenObserver;
+
+    public void setOrdenObserver(OrdenObserver ordenObserver) {
+        this.ordenObserver = ordenObserver;
+    }
+
     OrdenRepositoryImplement ordenRepositoryImplement = new OrdenRepositoryImplement();
     public void setOrden(Orden orden) {
         this.orden = orden;
@@ -43,6 +51,10 @@ public class CardPedidoController implements Initializable {
     @FXML
     void completar(MouseEvent event) {
         ordenRepositoryImplement.update(orden);
+
+        if (ordenObserver != null) {
+            ordenObserver.actualizarOrdenes();
+        }
     }
 
     @Override
