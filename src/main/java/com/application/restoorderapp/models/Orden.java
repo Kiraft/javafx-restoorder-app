@@ -11,29 +11,13 @@ public class Orden {
     String cliente;
 
     Empleado empleado;
+    Boolean done;
 
     List<DetallePedido> detallePedidos;
 
     public Orden() {
         detallePedidos = new ArrayList<>();
     }
-
-    public List<DetallePedido> getDetallePedidos() {
-        return detallePedidos;
-    }
-
-    public void setDetallePedidos(List<DetallePedido> detallePedidos) {
-        this.detallePedidos = detallePedidos;
-    }
-
-    public String getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
-    }
-
 
     public Long getId() {
         return id;
@@ -59,6 +43,14 @@ public class Orden {
         this.estado_preparacion = estado_preparacion;
     }
 
+    public String getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
     public Empleado getEmpleado() {
         return empleado;
     }
@@ -67,13 +59,32 @@ public class Orden {
         this.empleado = empleado;
     }
 
+    public Boolean getDone() {
+        return done;
+    }
+
+    public void setDone(Boolean done) {
+        this.done = done;
+    }
+
+    public List<DetallePedido> getDetallePedidos() {
+        return detallePedidos;
+    }
+
+    public void setDetallePedidos(List<DetallePedido> detallePedidos) {
+        this.detallePedidos = detallePedidos;
+    }
+
     @Override
     public String toString() {
-        return "Orden {" +
-                "\n   id = " + id +
-                ", \n   fecha = " + fecha +
-                ", \n   estado_preparacion = '" + estado_preparacion + '\'' +
-                ", \n   empleado = " + empleado +
+        return "Orden{" +
+                "id=" + id +
+                ", fecha=" + fecha +
+                ", estado_preparacion='" + estado_preparacion + '\'' +
+                ", cliente='" + cliente + '\'' +
+                ", empleado=" + empleado +
+                ", done=" + done +
+                ", detallePedidos=" + detallePedidos +
                 '}';
     }
 }

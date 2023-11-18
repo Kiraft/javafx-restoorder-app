@@ -28,6 +28,7 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
                 o.setFecha(rs.getTimestamp("fecha"));
                 o.setEstado_preparacion(rs.getString("estado_preparacion"));
                 o.setCliente(rs.getString("cliente"));
+                o.setDone(rs.getBoolean("done"));
                 Empleado e = new Empleado();
                 e.setId(rs.getLong("e.id"));
                 e.setNombre(rs.getString("nombre"));

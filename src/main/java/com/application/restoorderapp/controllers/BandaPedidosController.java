@@ -17,6 +17,7 @@ import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -44,7 +45,14 @@ public class BandaPedidosController implements Initializable {
     }
 
     private void cargarOrdenes(){
-        ordenes = ordenRepositoryImplement.listar();
+//        ordenes = ordenRepositoryImplement.listar();
+        ordenes = new ArrayList<>();
+
+        for (Orden o : ordenRepositoryImplement.listar()) {
+            if(!o.getDone()){
+                ordenes.add(o);        
+            }
+        }
 
         for (Orden o : ordenes) {
             o.setDetallePedidos(detallePedidoRepositoryImplement.listarPorIdOrden(o));
