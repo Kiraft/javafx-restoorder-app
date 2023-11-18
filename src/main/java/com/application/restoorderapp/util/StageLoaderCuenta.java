@@ -43,14 +43,6 @@ public class StageLoaderCuenta {
                 menuController.setCuenta(cuenta);
             }
 
-
-//            else if (controller instanceof StatusController) {
-//                StatusController statusController = (StatusController) controller;
-//                statusController.setAlumno(alumno);
-//            } else if (controller instanceof ArchivoController) {
-//                ArchivoController archivoController = (ArchivoController) controller;
-//                archivoController.setAlumno(alumno);
-//            }
         }
         stage.show();
     }
