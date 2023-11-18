@@ -1,5 +1,3 @@
--- mysql -h 35.232.239.181 -u root -p
--- lolxx4321
 
 USE resto_order;
 
