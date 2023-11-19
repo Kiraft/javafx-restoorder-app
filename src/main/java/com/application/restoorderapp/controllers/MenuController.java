@@ -91,6 +91,14 @@ public class MenuController implements Initializable {
         this.cuenta = cuenta;
     }
 
+    private String styleSelect = "-fx-background-color: #cf454b;\n" +
+            " -fx-border-color: #FFFFFF;\n" +
+            " -fx-border-width: 0 0 4 0;\n" +
+            " -fx-background-radius: 0;\n" +
+            " -fx-border-radius: 0;";
+    private String styleReset = "-fx-background-color: #b12d33;\n" +
+            " -fx-background-radius: 0;\n" +
+            " -fx-border-radius: 0;";
 
     @FXML
     void eliminar(ActionEvent event) {
@@ -148,15 +156,33 @@ public class MenuController implements Initializable {
         switch (source.getId()) {
             case "btnInternacional":
                 cargarYMostrarPlatillos("INTERNACIONAL");
+                btnInternacional.setStyle(styleSelect);
+                btnCafe.setStyle(styleReset);
+                btnPostres.setStyle(styleReset);
+                btnAsiatica.setStyle(styleReset);
                 break;
             case "btnAsiatica":
                 cargarYMostrarPlatillos("ASIATICA");
+                btnAsiatica.setStyle(styleSelect);
+                btnInternacional.setStyle(styleReset);
+                btnCafe.setStyle(styleReset);
+                btnPostres.setStyle(styleReset);
                 break;
             case "btnPostres":
                 cargarYMostrarPlatillos("POSTRES");
+                btnPostres.setStyle(styleSelect);
+
+                btnInternacional.setStyle(styleReset);
+                btnCafe.setStyle(styleReset);
+                btnAsiatica.setStyle(styleReset);
                 break;
             case "btnCafe":
                 cargarYMostrarPlatillos("CAFE");
+                btnCafe.setStyle(styleSelect);
+
+                btnInternacional.setStyle(styleReset);
+                btnPostres.setStyle(styleReset);
+                btnAsiatica.setStyle(styleReset);
                 break;
             default:
                 break;
