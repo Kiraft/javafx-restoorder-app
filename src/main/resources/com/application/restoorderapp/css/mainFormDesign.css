@@ -83,6 +83,8 @@ and open the template in the editor.
     -fx-text-fill: #fff;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
+        -fx-border-radius: 10;
+        -fx-background-radius: 10;
 }
 .btn:hover{
     -fx-background-color: linear-gradient(to bottom right, #E84250, #953538);
