@@ -154,4 +154,4 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     "Ingredientes: Huevo, chile, jitomate y queso."
 );
 
--- SOURCE insert_mesas.sql;
+ SOURCE insert_mesas.sql;
