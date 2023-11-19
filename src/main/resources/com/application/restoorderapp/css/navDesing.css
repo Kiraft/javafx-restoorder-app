@@ -1,0 +1,10 @@
+
+.navbar-btn{
+    -fx-font-size: 30;
+    -fx-border-color:  #FFFFFF;
+    -fx-background-color: #BA2B37;
+}
+
+.navbar-btn:hover{
+    -fx-background-color: #D94147;
+}
