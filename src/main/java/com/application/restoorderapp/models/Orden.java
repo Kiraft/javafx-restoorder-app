@@ -13,10 +13,20 @@ public class Orden {
     Empleado empleado;
     Boolean done;
 
+    Mesa mesa;
+
     List<DetallePedido> detallePedidos;
 
     public Orden() {
         detallePedidos = new ArrayList<>();
+    }
+
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
     }
 
     public Long getId() {

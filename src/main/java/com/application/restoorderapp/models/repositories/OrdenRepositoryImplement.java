@@ -1,9 +1,6 @@
 package com.application.restoorderapp.models.repositories;
 
-import com.application.restoorderapp.models.Cuenta;
-import com.application.restoorderapp.models.Empleado;
-import com.application.restoorderapp.models.Orden;
-import com.application.restoorderapp.models.TipoEmpleado;
+import com.application.restoorderapp.models.*;
 import com.application.restoorderapp.models.interfaces.Repository;
 import com.application.restoorderapp.util.ConexionDB;
 
