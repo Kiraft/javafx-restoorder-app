@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="898.0" prefWidth="1183.0" style="-fx-background-color: #FAEADA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.PerfilController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="898.0" prefWidth="1183.0" style="-fx-background-color: #FAEADA;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.restoorderapp.controllers.PerfilController">
    <children>
-      <Pane layoutX="-22.0" layoutY="-7.0" prefHeight="165.0" prefWidth="1928.0" style="-fx-background-color: #882323;">
+      <Pane layoutY="-7.0" prefHeight="165.0" prefWidth="1183.0" style="-fx-background-color: #882323;">
          <children>
             <Text fill="WHITE" layoutX="63.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATOS PERSONALES">
                <font>
@@ -20,153 +22,144 @@
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="2.0" layoutY="158.0" prefHeight="162.0" prefWidth="1898.0" style="-fx-background-color: 0000; -fx-border-color: EED3B1;">
+      <Pane layoutX="14.0" layoutY="168.0" prefHeight="172.0" prefWidth="1158.0" style="-fx-background-color: 0000; -fx-border-color: EED3B1; -fx-border-width: 2 2 0 2;">
          <children>
-            <Text layoutX="205.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PEPITO BERMUDA ALCARÁZ">
+            <Text layoutX="190.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PEPITO BERMUDA ALCARÁZ">
                <font>
                   <Font name="System Bold" size="35.0" />
                </font>
             </Text>
-            <Text layoutX="397.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mesero 2">
+            <Text layoutX="190.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mesero">
                <font>
-                  <Font size="34.0" />
+                  <Font size="30.0" />
                </font>
             </Text>
-            <ImageView fitHeight="134.0" fitWidth="156.0" layoutX="35.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="134.0" fitWidth="156.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/meserito.jpg" />
                </image>
             </ImageView>
-            <Line endX="326.0" endY="0.7841796875" layoutX="355.0" layoutY="98.0" startX="-150.0" startY="0.7841796875" stroke="#eed3b1" />
+            <Line endX="326.0" endY="0.7841796875" layoutX="341.0" layoutY="109.0" startX="-150.0" startY="0.7841796875" stroke="#eed3b1" />
          </children>
       </Pane>
-      <Pane layoutX="-10.0" layoutY="314.0" prefHeight="108.0" prefWidth="1912.0" style="-fx-background-color: 0000;">
+      <Pane layoutX="14.0" layoutY="330.0" prefHeight="108.0" prefWidth="1158.0" style="-fx-background-color: 0000; -fx-border-color: EED3B1; -fx-border-width: 0 2 2 2;">
          <children>
             <Text layoutX="47.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingreso">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
             </Text>
-            <Text layoutX="206.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salida">
+            <Text layoutX="206.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NSS">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
             </Text>
-            <Text layoutX="319.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Empleado">
+            <Text layoutX="386.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RFC">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
             </Text>
-            <TextField layoutX="37.0" layoutY="52.0" prefHeight="41.0" prefWidth="124.0" text="04/10/2023">
+            <Text layoutX="47.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="24/Abr/23">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
-            </TextField>
-            <TextField layoutX="184.0" layoutY="54.0" prefHeight="34.0" prefWidth="112.0" text="         -">
+            </Text>
+            <Text layoutX="206.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="738291929867">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
-            </TextField>
-            <TextField layoutX="332.0" layoutY="54.0" prefHeight="39.0" prefWidth="98.0" text="2365982">
+            </Text>
+            <Text layoutX="386.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUMJ889922HM">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="22.0" />
                </font>
-            </TextField>
+            </Text>
          </children>
       </Pane>
-      <Pane layoutX="2.0" layoutY="427.0" prefHeight="180.0" prefWidth="1896.0" style="-fx-background-color: 0000; -fx-border-color: EED3B1;">
+      <Pane layoutX="14.0" layoutY="449.0" prefHeight="424.0" prefWidth="1158.0" style="-fx-background-color: 0000; -fx-border-color: EED3B1; -fx-border-width: 2;">
          <children>
-            <Text layoutX="19.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Información personal" wrappingWidth="339.384765625">
+            <Text layoutX="26.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Información personal" wrappingWidth="339.384765625">
                <font>
                   <Font size="31.0" />
                </font>
             </Text>
-            <Text layoutX="38.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Celular">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Text>
-            <Text layoutX="37.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correo">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Text>
-            <Text fill="#1f2470" layoutX="114.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmado">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fill="#1f2470" layoutX="113.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmado">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="54.0" fitWidth="39.0" layoutX="1769.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/caret-forward.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="54.0" fitWidth="39.0" layoutX="1767.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/caret-forward.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane layoutX="-31.0" layoutY="608.0" prefHeight="67.0" prefWidth="1934.0" style="-fx-background-color: 0000;">
-         <children>
-            <Text layoutX="69.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="54.0" fitWidth="39.0" layoutX="1800.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/caret-forward.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane layoutX="-35.0" layoutY="673.0" prefHeight="81.0" prefWidth="1932.0" style="-fx-background-color: 0000; -fx-border-color: EED3B1;">
-         <children>
-            <Text layoutX="71.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pregunta secreta">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="54.0" fitWidth="39.0" layoutX="1805.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/caret-forward.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane layoutX="-29.0" layoutY="755.0" prefHeight="81.0" prefWidth="1928.0" style="-fx-background-color: 0000;">
-         <children>
-            <Text layoutX="64.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seciones activas">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="54.0" fitWidth="39.0" layoutX="1799.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/caret-forward.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane layoutX="-33.0" layoutY="831.0" prefHeight="67.0" prefWidth="1932.0" style="-fx-background-color: 0000; -fx-border-color: EED3B1;">
-         <children>
-            <Text layoutX="67.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cerrar sesión">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="54.0" fitWidth="39.0" layoutX="1804.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@assets/caret-forward.png" />
-               </image>
-            </ImageView>
+            <VBox layoutX="34.0" layoutY="63.0" prefHeight="249.0" prefWidth="1037.0">
+               <children>
+                  <Label text="Celular" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="labelName" alignment="CENTER">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <Line endX="800.0" startX="-100.0" stroke="#cfd5db" strokeWidth="2.0" />
+                  <Label text="Correo">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelPrice">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <Line endX="800.0" startX="-100.0" stroke="#cfd5db" strokeWidth="2.0" />
+                  <Label text="Usuario">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelStock">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <Line endX="800.0" startX="-100.0" stroke="#cfd5db" strokeWidth="2.0" />
+                  <Label text="Contraséñá">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelBarCode">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <Line endX="800.0" startX="-100.0" stroke="#cfd5db" strokeWidth="2.0" />
+                  <Label text="Mesas">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelBarCode1">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Label>
+                  <Line endX="800.0" startX="-100.0" stroke="#cfd5db" strokeWidth="2.0" />
+               </children>
+            </VBox>
          </children>
       </Pane>
    </children>
