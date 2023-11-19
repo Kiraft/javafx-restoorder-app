@@ -2,7 +2,7 @@ package com.application.restoorderapp.controllers;
 
 import com.application.restoorderapp.models.Cuenta;
 
-public class SettingsController {
+public class PerfilController {
 
     private Cuenta cuenta;
 

@@ -9,35 +9,35 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     84,
     3,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/postres/panque-aroma.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Panque al estilo aroma."
 ),
 (
     "TIRAMISU AROMA",
     100,
     3,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/postres/tiramisu.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Pastel, chocolate y azúcar."
 ),
 (
     "TRUFA",
     120,
     3,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/postres/trufa-aroma.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Seta, queso"
 ),
 (
     "BROWNIE",
     80,
     3,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/postres/browne.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Chocolate, leche y queso."
 ),
 (
     "POLVORONES DE NUEZ",
     68,
     3,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/postres/polvorones-nuez.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Nuez, leche, azúcar y azúcar glass."
 );
 
 --Insertar asiatica
@@ -47,35 +47,35 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     105,
     2,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/asiatica/ramen.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Fideos asiáticos, pollo o carne, huevo frito y verduras."
 ),
 (
-    "ATUN PREPARADO",
+    "ATÚN PREPARADO",
     135,
     2,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/asiatica/atun-preparado.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Atún (pescado), verduras y especias."
 ),
 (
-    "SALMON CON QUESO CREMA",
+    "SALMÓN CON QUESO CREMA",
     149,
     2,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/asiatica/salon-queso-crema.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Salmón (pescado y queso-crema.)"
 ),
 (
     "KANIKAMA",
     125,
     2,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/asiatica/kanikama.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingedientes: Rollitos de cangrejo y especias."
 ),
 (
     "YAKIMESHI",
     91,
     2,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/asiatica/yakimeshi.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Arroz japonés, verduras y soya."
 );
 
 --Insertar cafe
@@ -85,35 +85,35 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     32,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/cafe-ligero.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Café molido, azúcar y agua."
 ),
 (
     "CAFE LATTE SUPREMO",
     76,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/cafe-latte.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingedientes: Leche, espuma de leche, café molido."
 ),
 (
     "CAFE MOKA BLANCO",
     60,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/cafe-moka.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Café estilo moka molido, agua y azúcar."
 ),
 (
     "PRENSA FRANCESA",
     125,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/prensa-francesa.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Café en grano, agua y azúcar."
 ),
 (
-    "CAFE SPRESSO",
+    "CAFE ESPRESSO",
     91,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/cafe-spresso.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Café molido fino y agua."
 );
 
 --Insertar internacional
@@ -123,35 +123,35 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     240,
     1,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/internacional/lechuga-parmesana.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Pechuga, salsa de tomate rojo, sal, pan molido y aceite de oliva."
 ),
 (
-    "HAMBURGESA BISTRO",
+    "HAMBURGUESA BISTRO",
     235,
     1,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/internacional/hamburgesa-bistro.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Pan, carne para hamburguesa, jitomate, cebolla, queso amarillo, pepinillos y lechuga."
 ),
 (
     "ENCHILADAS VERDES",
     198,
     1,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/internacional/enchiladas.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Tortilla frita, salsa, relleno pollo, queso, crema y cebolla."
 ),
 (
     "CHILAQUILES NATURALES",
     159,
     1,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/internacional/chilaquiles-naturales.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Tortillas doradas, queso, crema y cebolla."
 ),
 (
     "OMELET MEXICANO",
     91,
     1,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/internacional/omelet-mexicano.PNG',
-    "AQUI VA LA DESCRIPCION"
+    "Ingredientes: Huevo, chile, jitomate y queso."
 );
 
 -- SOURCE insert_mesas.sql;

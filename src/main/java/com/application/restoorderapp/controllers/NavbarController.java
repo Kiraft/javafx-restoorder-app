@@ -2,11 +2,8 @@ package com.application.restoorderapp.controllers;
 
 import com.application.restoorderapp.App;
 import com.application.restoorderapp.models.Cuenta;
-import com.application.restoorderapp.models.DetallePedido;
 import com.application.restoorderapp.util.StageLoaderCuenta;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -94,14 +91,14 @@ public class NavbarController implements Initializable {
                 break;
             case "btnSettings":
 
-                FXMLLoader settingsLoader = new FXMLLoader(App.class.getResource("view_settings.fxml"));
+                FXMLLoader perfilLoader = new FXMLLoader(App.class.getResource("view_perfil.fxml"));
 
                 try {
-                    Parent settingsRoot = settingsLoader.load();
-                    SettingsController settingsController = settingsLoader.getController();
-                    settingsController.setCuenta(cuenta);
+                    Parent perfilRoot = perfilLoader.load();
+                    PerfilController perfilController = perfilLoader.getController();
+                    perfilController.setCuenta(cuenta);
                     containerLeft.getChildren().clear();
-                    containerLeft.getChildren().add(settingsRoot);
+                    containerLeft.getChildren().add(perfilRoot);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
