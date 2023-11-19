@@ -18,6 +18,9 @@ import java.util.ResourceBundle;
 
 public class CardPedidoController implements Initializable {
 
+    @FXML
+    private Label labelMesa;
+
 
     @FXML
     private VBox containerDetallesPedido;
@@ -74,6 +77,7 @@ public class CardPedidoController implements Initializable {
                 labelDate.setText(horaYMinutos);
                 labelIdOrden.setText("#" + orden.getId());
                 labelCliente.setText(orden.getCliente());
+                labelMesa.setText("Mesa #"+orden.getMesa().getId());
 
                 for (DetallePedido dp :orden.getDetallePedidos()) {
                     Label label = new Label();

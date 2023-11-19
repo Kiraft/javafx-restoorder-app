@@ -1,12 +1,10 @@
 package com.application.restoorderapp.controllers;
 
 import com.application.restoorderapp.App;
-import com.application.restoorderapp.models.Cuenta;
-import com.application.restoorderapp.models.DetallePedido;
-import com.application.restoorderapp.models.ElementoMenu;
-import com.application.restoorderapp.models.Orden;
+import com.application.restoorderapp.models.*;
 import com.application.restoorderapp.models.repositories.DetallePedidoRepositoryImplement;
 import com.application.restoorderapp.models.repositories.ElementoMenuRepositoryImplement;
+import com.application.restoorderapp.models.repositories.MesaRepositoryImplement;
 import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
 import com.application.restoorderapp.util.AlertUtil;
 import javafx.application.Platform;
@@ -86,6 +84,7 @@ public class MenuController implements Initializable {
     ElementoMenuRepositoryImplement elementoMenuRepositoryImplement = new ElementoMenuRepositoryImplement();
     OrdenRepositoryImplement ordenRepositoryImplement = new OrdenRepositoryImplement();
     DetallePedidoRepositoryImplement detallePedidoRepositoryImplement = new DetallePedidoRepositoryImplement();
+    MesaRepositoryImplement mesaRepositoryImplement = new MesaRepositoryImplement();
     private Cuenta cuenta;
 
     public void setCuenta(Cuenta cuenta) {
@@ -103,26 +102,31 @@ public class MenuController implements Initializable {
         if(!detallePedido.isEmpty()){
 
             if(!txtCliente.getText().isEmpty()){
-                Orden o = new Orden();
-                o.setFecha(new Date());
-                o.setEstado_preparacion("PREPARANDO");
-                o.setEmpleado(cuenta.getEmpleado());
-                o.setCliente(txtCliente.getText());
+                if(boxMesas.getValue() != null){
+                    Orden o = new Orden();
+                    o.setFecha(new Date());
+                    o.setEstado_preparacion("PREPARANDO");
+                    o.setEmpleado(cuenta.getEmpleado());
+                    o.setCliente(txtCliente.getText());
+                    o.setMesa((Mesa) boxMesas.getValue());
 
-                Long idOrden = ordenRepositoryImplement.guardarReturndId(o);
-                o.setId(idOrden);
+                    Long idOrden = ordenRepositoryImplement.guardarReturndId(o);
+                    o.setId(idOrden);
 
-                for (DetallePedido dp: detallePedido) {
-                    dp.setOrden(o);
+                    for (DetallePedido dp: detallePedido) {
+                        dp.setOrden(o);
+                    }
+
+                    for (DetallePedido dp: detallePedido) {
+                        detallePedidoRepositoryImplement.guardar(dp);
+                    }
+
+                    detallePedido.clear();
+                    AlertUtil.showAlert(Alert.AlertType.INFORMATION, "PEDIDO REALIZADO CON EXITO", "TU PEDIDO SE HA REALIZADO CON EXITO Y SE HA MANDADO A COCINA");
+                    txtCliente.clear();
+                }else{
+                    AlertUtil.showAlert(Alert.AlertType.INFORMATION, "ERROR AL REALIZAR PEDIDO", "DEBES AGREGAR OBLIGATORIAMENTE SELECCIONAR UNA MESA");
                 }
-
-                for (DetallePedido dp: detallePedido) {
-                    detallePedidoRepositoryImplement.guardar(dp);
-                }
-
-                detallePedido.clear();
-                AlertUtil.showAlert(Alert.AlertType.INFORMATION, "PEDIDO REALIZADO CON EXITO", "TU PEDIDO SE HA REALIZADO CON EXITO Y SE HA MANDADO A COCINA");
-                txtCliente.clear();
             }else{
                 AlertUtil.showAlert(Alert.AlertType.INFORMATION, "ERROR AL REALIZAR PEDIDO", "DEBES AGREGAR OBLIGATORIAMENTE UN NOMBRE AL CLIENTE");
             }
@@ -157,6 +161,12 @@ public class MenuController implements Initializable {
             default:
                 break;
         }
+    }
+
+    public void loadMesasInComboBox(){
+
+        ObservableList ObservableListCarrera = FXCollections.observableArrayList(mesaRepositoryImplement.listarPorEmpleado(cuenta.getEmpleado()));
+        boxMesas.setItems(ObservableListCarrera);
     }
 
     private void cargarYMostrarPlatillos(String categoria) {
@@ -223,6 +233,7 @@ public class MenuController implements Initializable {
                         cardPlatilloController.setElementoMenu(em);
 
                         containerPlatillosNodes.getChildren().add(cardPlatilloRoot);
+                        loadMesasInComboBox();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

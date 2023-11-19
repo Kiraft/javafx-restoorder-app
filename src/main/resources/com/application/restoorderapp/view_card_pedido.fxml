@@ -66,6 +66,11 @@
                   <Font name="Bookshelf Symbol 7" size="26.0" />
                </font>
             </Label>
+            <Label fx:id="labelMesa" layoutX="276.0" layoutY="14.0" text="Mesa #1" textFill="#5f4242">
+               <font>
+                  <Font name="Bookshelf Symbol 7" size="26.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane layoutX="-3.0" layoutY="551.0" prefHeight="90.0" prefWidth="396.0" style="-fx-background-color: #FFFFFF;">

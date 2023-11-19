@@ -16,7 +16,7 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
     public List<Orden> listar() {
         List<Orden> ordenes = new ArrayList<>();
 
-        String sql = "SELECT * FROM ordenes AS o INNER JOIN empleados AS e ON o.empleados_id = e.id INNER JOIN tipos_empleados AS te ON e.tipos_empleados_id = te.id;";
+        String sql = "SELECT * FROM ordenes AS o INNER JOIN empleados AS e ON o.empleados_id = e.id INNER JOIN tipos_empleados AS te ON e.tipos_empleados_id = te.id INNER JOIN mesas AS m ON o.mesas_id = m.id;";
         try (Statement stmt = getConnection().createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
@@ -27,6 +27,11 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
                 o.setEstado_preparacion(rs.getString("estado_preparacion"));
                 o.setCliente(rs.getString("cliente"));
                 o.setDone(rs.getBoolean("done"));
+                Mesa m =  new Mesa();
+                m.setId(rs.getLong("m.id"));
+                m.setStatus(rs.getBoolean("status"));
+                m.setCapacidad(rs.getInt("capacidad"));
+                o.setMesa(m);
                 Empleado e = new Empleado();
                 e.setId(rs.getLong("e.id"));
                 e.setNombre(rs.getString("nombre"));
@@ -93,7 +98,7 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
     }
 
     public Long guardarReturndId(Orden order) {
-        String sql = "INSERT INTO ordenes (fecha, estado_preparacion, empleados_id, cliente) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO ordenes (fecha, estado_preparacion, empleados_id, cliente, mesas_id) VALUES (?, ?, ?, ?, ?)";
         Long idGenerado = null; // Inicializar con null si no se genera una clave primaria
 
         try (PreparedStatement stmt = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -104,6 +109,7 @@ public class OrdenRepositoryImplement implements Repository<Orden> {
             stmt.setString(2, order.getEstado_preparacion());
             stmt.setLong(3, order.getEmpleado().getId());
             stmt.setString(4, order.getCliente());
+            stmt.setLong(5, order.getMesa().getId());
 
             int filasAfectadas = stmt.executeUpdate();
             if (filasAfectadas == 1) {
