@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +24,9 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class BandaPedidosController implements Initializable, OrdenObserver {
+
+    @FXML
+    private Text labelActivos;
 
     @FXML
     private Button btnExit;
@@ -38,6 +42,7 @@ public class BandaPedidosController implements Initializable, OrdenObserver {
     void reloadOrdenes(MouseEvent event) {
         containerPedidos.getChildren().clear();
         cargarOrdenes();
+        labelActivos.setText(String.valueOf(ordenes.size()));
     }
 
     @FXML
@@ -86,6 +91,7 @@ public class BandaPedidosController implements Initializable, OrdenObserver {
 
             Platform.runLater(() -> {
                 cargarOrdenes();
+                labelActivos.setText(String.valueOf(ordenes.size()));
             });
         });
 
@@ -96,5 +102,6 @@ public class BandaPedidosController implements Initializable, OrdenObserver {
     public void actualizarOrdenes() {
         containerPedidos.getChildren().clear();
         cargarOrdenes();
+        labelActivos.setText(String.valueOf(ordenes.size()));
     }
 }
