@@ -5,6 +5,7 @@ module com.application.restoorderapp {
 
     requires org.controlsfx.controls;
     requires java.sql;
+    requires com.jfoenix;
 
     opens com.application.restoorderapp to javafx.fxml;
     exports com.application.restoorderapp;

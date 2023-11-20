@@ -7,6 +7,7 @@ import com.application.restoorderapp.models.repositories.ElementoMenuRepositoryI
 import com.application.restoorderapp.models.repositories.MesaRepositoryImplement;
 import com.application.restoorderapp.models.repositories.OrdenRepositoryImplement;
 import com.application.restoorderapp.util.AlertUtil;
+import com.jfoenix.controls.JFXComboBox;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -31,6 +32,9 @@ import java.util.ResourceBundle;
 
 
 public class MenuController implements Initializable {
+
+    @FXML
+    private JFXComboBox<?> xd;
 
     @FXML
     private ComboBox<?> boxMesas;
@@ -192,7 +196,7 @@ public class MenuController implements Initializable {
     public void loadMesasInComboBox(){
 
         ObservableList ObservableListCarrera = FXCollections.observableArrayList(mesaRepositoryImplement.listarPorEmpleado(cuenta.getEmpleado()));
-        boxMesas.setItems(ObservableListCarrera);
+        xd.setItems(ObservableListCarrera);
     }
 
     private void cargarYMostrarPlatillos(String categoria) {
