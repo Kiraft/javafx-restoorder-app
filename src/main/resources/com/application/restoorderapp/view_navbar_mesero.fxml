@@ -27,7 +27,7 @@
                   <Image url="@assets/aroma%20logo%20blanco.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnMenu" alignment="BOTTOM_RIGHT" layoutX="55.0" layoutY="519.0" mnemonicParsing="false" onAction="#navbarChange" prefHeight="75.0" prefWidth="318.0" styleClass="navbar-btn" text="MENÚ" textFill="WHITE">
+            <Button fx:id="btnMenu" alignment="BOTTOM_RIGHT" layoutX="55.0" layoutY="519.0" mnemonicParsing="false" onAction="#navbarChange" prefHeight="75.0" prefWidth="318.0" style="-fx-border-width: 3.5;" styleClass="navbar-btn" text="MENÚ" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="68.0" />
                </font>

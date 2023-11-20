@@ -55,8 +55,9 @@ public class NavbarController implements Initializable {
         Node source = (Node) event.getSource();
         switch (source.getId()) {
             case "btnMenu":
-//                StageLoaderCuenta.load("view_menu.fxml", event, cuenta);
-
+                btnMenu.setStyle("-fx-border-width: 3.5");
+                btnSettings.setStyle("");
+                btnTickets.setStyle("");
                 FXMLLoader menuLoader = new FXMLLoader(App.class.getResource("view_menu.fxml"));
 
                 try {
@@ -75,7 +76,9 @@ public class NavbarController implements Initializable {
 
                 break;
             case "btnTickets":
-
+                btnTickets.setStyle("-fx-border-width: 3.5");
+                btnMenu.setStyle("");
+                btnSettings.setStyle("");
                 FXMLLoader ticketsLoader = new FXMLLoader(App.class.getResource("view_tickets.fxml"));
 
                 try {
@@ -90,7 +93,9 @@ public class NavbarController implements Initializable {
 
                 break;
             case "btnSettings":
-
+                btnSettings.setStyle("-fx-border-width: 3.5");
+                btnMenu.setStyle("");
+                btnTickets.setStyle("");
                 FXMLLoader perfilLoader = new FXMLLoader(App.class.getResource("view_perfil.fxml"));
 
                 try {
