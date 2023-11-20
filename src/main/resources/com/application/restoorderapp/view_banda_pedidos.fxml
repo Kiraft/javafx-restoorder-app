@@ -25,26 +25,36 @@
                         <Font name="System Bold" size="51.0" />
                     </font>
                 </Text>
-                <ImageView fitHeight="69.0" fitWidth="100.0" layoutX="441.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@assets/27e1bd4903a0e30e8e1c9daaf21b780704be85f408a163876c439dd6459f6384%201.png" />
-                    </image>
-                </ImageView>
-                <Text fx:id="labelActivos" fill="WHITE" layoutX="522.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
-                    <font>
-                        <Font name="System Bold" size="49.0" />
-                    </font>
-                </Text>
-                <Text fill="WHITE" layoutX="581.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="en curso">
-                    <font>
-                        <Font name="System Bold" size="44.0" />
-                    </font>
-                </Text>
             <ImageView fx:id="imgReload" fitHeight="113.0" fitWidth="174.0" layoutX="1603.0" layoutY="16.0" onMouseClicked="#reloadOrdenes" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assets/27e1bd4903a0e30e8e1c9daaf21b780704be85f408a163876c439dd6459f6384%201.png" />
                </image>
             </ImageView>
+            <HBox layoutX="442.0" layoutY="41.0" prefHeight="68.0" prefWidth="299.0">
+               <children>
+                      <ImageView fitHeight="69.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@assets/27e1bd4903a0e30e8e1c9daaf21b780704be85f408a163876c439dd6459f6384%201.png" />
+                          </image>
+                     <HBox.margin>
+                        <Insets right="-20.0" />
+                     </HBox.margin>
+                      </ImageView>
+                      <Text fx:id="labelActivos" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+                          <font>
+                              <Font name="System Bold" size="49.0" />
+                          </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                      </Text>
+                      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="en curso">
+                          <font>
+                              <Font name="System Bold" size="44.0" />
+                          </font>
+                      </Text>
+               </children>
+            </HBox>
             </children>
         </Pane>
         <Pane layoutY="850.0" prefHeight="130.0" prefWidth="1820.0" style="-fx-background-color: #882323;">
