@@ -114,13 +114,13 @@ public class MenuController implements Initializable {
         if(!detallePedido.isEmpty()){
 
             if(!txtCliente.getText().isEmpty()){
-                if(boxMesas.getValue() != null){
+                if(xd.getValue() != null){
                     Orden o = new Orden();
                     o.setFecha(new Date());
                     o.setEstado_preparacion("PREPARANDO");
                     o.setEmpleado(cuenta.getEmpleado());
                     o.setCliente(txtCliente.getText());
-                    o.setMesa((Mesa) boxMesas.getValue());
+                    o.setMesa((Mesa) xd.getValue());
 
                     Long idOrden = ordenRepositoryImplement.guardarReturndId(o);
                     o.setId(idOrden);

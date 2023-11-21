@@ -84,7 +84,7 @@
             </Label>
             <Button fx:id="btnPagar" layoutX="198.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#pagar" prefHeight="41.0" prefWidth="140.0" styleClass="btn" text="PAGAR" />
             <Button fx:id="btnEliminar" layoutX="22.0" layoutY="322.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="41.0" prefWidth="152.0" styleClass="btn" text="ELIMINAR ORDEN" />
-            <JFXComboBox layoutX="58.0" layoutY="138.0" prefHeight="41.0" prefWidth="249.0" promptText="Selecciona una mesa" style="-fx-background-color: FBE3CB;" stylesheets="@css/comboBoxDesing.css" fx:id="xd" />
+            <JFXComboBox focusColor="#b12d33" layoutX="58.0" layoutY="138.0" prefHeight="41.0" prefWidth="249.0" promptText="Selecciona una mesa" style="-fx-background-color: FBE3CB;" stylesheets="@css/comboBoxDesing.css" unFocusColor="#b12d33" fx:id="xd" />
          </children>
       </Pane>
    </children>
