@@ -1,4 +1,6 @@
 package com.application.restoorderapp.controllers;
+import javafx.scene.control.TextInputDialog;
+import java.util.Optional;
 
 import com.application.restoorderapp.models.DetallePedido;
 import com.application.restoorderapp.models.ElementoMenu;
@@ -65,16 +67,35 @@ public class CardPlatilloController implements Initializable {
     @FXML
     void agregar(MouseEvent event) {
 
-        DetallePedido dp = new DetallePedido();
+        TextInputDialog dialog = new TextInputDialog("");
+        dialog.setTitle("Comentario");
+        dialog.setHeaderText(null);
+        dialog.setContentText("Ingrese un comentario:");
 
-        dp.setCantidad(spinnerCantidad.getValue());
-        dp.setPrecio_unitario(elementoMenu.getPrecio());
-        dp.setPrecio_total(spinnerCantidad.getValue() * elementoMenu.getPrecio());
-        dp.setElementoMenu(elementoMenu);
-        dp.setOrden(null);
+        Optional<String> result = dialog.showAndWait();
 
-        detallePedido.add(dp);
-//        labelAgregar.fireEvent(new ActionEvent(ELEMENTO_AGREGADO, null));
+        result.ifPresent(comentario -> {
+            DetallePedido dp = new DetallePedido();
+            dp.setCantidad(spinnerCantidad.getValue());
+            dp.setPrecio_unitario(elementoMenu.getPrecio());
+            dp.setPrecio_total(spinnerCantidad.getValue() * elementoMenu.getPrecio());
+            dp.setElementoMenu(elementoMenu);
+            dp.setOrden(null);
+            dp.setComentario(comentario);
+
+            detallePedido.add(dp);
+        });
+
+//        DetallePedido dp = new DetallePedido();
+//
+//        dp.setCantidad(spinnerCantidad.getValue());
+//        dp.setPrecio_unitario(elementoMenu.getPrecio());
+//        dp.setPrecio_total(spinnerCantidad.getValue() * elementoMenu.getPrecio());
+//        dp.setElementoMenu(elementoMenu);
+//        dp.setOrden(null);
+//        dp.setComentario("Ninguno");
+//
+//        detallePedido.add(dp);
     }
 
     @Override

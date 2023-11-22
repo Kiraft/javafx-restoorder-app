@@ -84,6 +84,11 @@ public class CardPedidoController implements Initializable {
                     label.setStyle("-fx-font-size: 22; -fx-text-fill: black; -fx-font-weight: bold;");
                     label.setText(dp.getCantidad() + " " + dp.getElementoMenu().getNombre());
                     containerDetallesPedido.getChildren().add(label);
+                    Label labelComentario = new Label();
+                    labelComentario.setStyle("-fx-font-size: 22; -fx-text-fill: #959595; -fx-font-weight: bold;");
+                    labelComentario.setText(dp.getComentario());
+                    containerDetallesPedido.getChildren().add(labelComentario);
+
                 }
             });
         });

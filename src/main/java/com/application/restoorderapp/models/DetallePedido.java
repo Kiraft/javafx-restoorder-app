@@ -9,6 +9,7 @@ public class DetallePedido {
     Orden orden;
 
     ElementoMenu elementoMenu;
+    String comentario;
 
     public DetallePedido() {
     }
@@ -20,6 +21,14 @@ public class DetallePedido {
         this.precio_total = precio_total;
         this.orden = orden;
         this.elementoMenu = elementoMenu;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
     public Long getId() {

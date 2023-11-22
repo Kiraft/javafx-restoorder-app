@@ -86,6 +86,7 @@ CREATE TABLE detalles_ordenes(
     precio_total DOUBLE NOT NULL,
     ordenes_id INT UNSIGNED NOT NULL,
     elementos_menu_id INT UNSIGNED NOT NULL,
+    comentario VARCHAR(255) NULL,
     FOREIGN KEY (ordenes_id) REFERENCES ordenes(id),
     FOREIGN KEY (elementos_menu_id) REFERENCES elementos_menu(id)
 );

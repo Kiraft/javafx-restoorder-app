@@ -31,13 +31,15 @@ public class DetallePedidoRepositoryImplement implements Repository<DetallePedid
 
     @Override
     public void guardar(DetallePedido detallePedido) {
-        String SQL = "INSERT INTO detalles_ordenes (cantidad, precio_unitario, precio_total, ordenes_id, elementos_menu_id) VALUES (?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO detalles_ordenes (cantidad, precio_unitario, precio_total, ordenes_id, elementos_menu_id, comentario) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = getConnection().prepareStatement(SQL) ) {
             stmt.setInt(1, detallePedido.getCantidad());
             stmt.setDouble(2, detallePedido.getPrecio_unitario());
             stmt.setDouble(3, detallePedido.getPrecio_total());
             stmt.setLong(4, detallePedido.getOrden().getId());
             stmt.setLong(5, detallePedido.getElementoMenu().getId());
+            stmt.setString(6, detallePedido.getComentario());
+
 
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -64,6 +66,7 @@ public class DetallePedidoRepositoryImplement implements Repository<DetallePedid
                     dp.setCantidad(rs.getInt("cantidad"));
                     dp.setPrecio_total(rs.getDouble("precio_total"));
                     dp.setPrecio_unitario(rs.getDouble("precio_total"));
+                    dp.setComentario(rs.getString("comentario"));
                     dp.setOrden(o);
                     ElementoMenu em = new ElementoMenu();
                     em.setId(rs.getLong("em.id"));
