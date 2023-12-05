@@ -16,7 +16,7 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     100,
     3,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/postres/tiramisu.PNG',
-    "Ingredientes: Pastel, chocolate y azúcar."
+    "Ingredientes: Pastel, chocolate y azucar."
 ),
 (
     "TRUFA",
@@ -37,7 +37,7 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     68,
     3,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/postres/polvorones-nuez.PNG',
-    "Ingredientes: Nuez, leche, azúcar y azúcar glass."
+    "Ingredientes: Nuez, leche, azucar y azucar glass."
 );
 
 --Insertar asiatica
@@ -47,21 +47,21 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     105,
     2,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/asiatica/ramen.PNG',
-    "Ingredientes: Fideos asiáticos, pollo o carne, huevo frito y verduras."
+    "Ingredientes: Fideos asiaticos, pollo o carne, huevo frito y verduras."
 ),
 (
-    "ATÚN PREPARADO",
+    "ATUN PREPARADO",
     135,
     2,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/asiatica/atun-preparado.PNG',
-    "Ingredientes: Atún (pescado), verduras y especias."
+    "Ingredientes: Atun (pescado), verduras y especias."
 ),
 (
-    "SALMÓN CON QUESO CREMA",
+    "SALMON CON QUESO CREMA",
     149,
     2,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/asiatica/salon-queso-crema.PNG',
-    "Ingredientes: Salmón (pescado y queso-crema.)"
+    "Ingredientes: Salmon (pescado y queso-crema.)"
 ),
 (
     "KANIKAMA",
@@ -75,7 +75,7 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     91,
     2,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/asiatica/yakimeshi.PNG',
-    "Ingredientes: Arroz japonés, verduras y soya."
+    "Ingredientes: Arroz japones, verduras y soya."
 );
 
 --Insertar cafe
@@ -85,35 +85,35 @@ INSERT INTO elementos_menu (nombre, precio, categorias_menu_id, img, descripcion
     32,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/cafe-ligero.PNG',
-    "Ingredientes: Café molido, azúcar y agua."
+    "Ingredientes: Cafe molido, azucar y agua."
 ),
 (
     "CAFE LATTE SUPREMO",
     76,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/cafe-latte.PNG',
-    "Ingedientes: Leche, espuma de leche, café molido."
+    "Ingedientes: Leche, espuma de leche, cafe molido."
 ),
 (
     "CAFE MOKA BLANCO",
     60,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/cafe-moka.PNG',
-    "Ingredientes: Café estilo moka molido, agua y azúcar."
+    "Ingredientes: Cafe estilo moka molido, agua y azucar."
 ),
 (
     "PRENSA FRANCESA",
     125,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/prensa-francesa.PNG',
-    "Ingredientes: Café en grano, agua y azúcar."
+    "Ingredientes: Cafe en grano, agua y azucar."
 ),
 (
     "CAFE ESPRESSO",
     91,
     4,
     'src/main/resources/com/application/restoorderapp/assets/img-platillos/cafe/cafe-spresso.PNG',
-    "Ingredientes: Café molido fino y agua."
+    "Ingredientes: Cafe molido fino y agua."
 );
 
 --Insertar internacional
