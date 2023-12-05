@@ -1,15 +1,24 @@
 package com.application.restoorderapp;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.util.Date;
+import java.io.IOException;
 
-public class test {
+public class test extends Application {
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view_login_and_register.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Run");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
+
     public static void main(String[] args) {
-        Date fecha = new Date();
-
-        System.out.println(fecha);
-
+        launch();
     }
 }
